@@ -21,17 +21,18 @@ def file_namer(startYR, endYR, name, dir=''):
 def get_setlist(filenames, col):
     #filenames = a list of filenames/.CSVs
     #col = the column name to create a set out of
-    df_final = pd.DataFrame(columns=['year', 'make', 'model'])
+    df_final = pd.DataFrame(columns=['MOD_YEAR', 'MAKE', 'MODEL'])
     for file in filenames:
-        df = pd.read_csv(file, encoding='latin1', header=0).astype(str)
+        df = pd.read_csv(file, encoding='latin1', header=0, usecols=['MOD_YEAR', 'MAKE', 'MODEL']
+                         , nrows=1000 ).astype(str)
 
         df_final = pd.concat([df_final, df], ignore_index=True)
     return set(df_final[col])
 
-makemod_filenames = file_namer(2017, 2020, 'vehicle', dir)
-make_set = get_setlist(makemod_filenames, col='make')
+makemod_filenames = file_namer(2020, 2020, 'vehicle', dir)
+make_set = get_setlist(makemod_filenames, col='MAKE')
 print(make_set)
-mod_set = get_setlist(makemod_filenames, col='model')
+mod_set = get_setlist(makemod_filenames, col='MODEL')
 print(mod_set)
 
 # def Load_NHTSA_Data(filenames):
