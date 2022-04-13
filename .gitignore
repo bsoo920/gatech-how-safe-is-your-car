@@ -2,4 +2,5 @@
 .DS_Store
 NHTSA.csv
 .idea/
-NHTSA-FARS-download/
+NHTSA-FARS-download/*.csv
+NHTSA-FARS-download/*.zip
