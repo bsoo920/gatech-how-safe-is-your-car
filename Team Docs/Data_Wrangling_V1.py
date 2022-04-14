@@ -13,7 +13,7 @@ def file_namer(startYR, endYR, name):
     #number range in list format
     #name = string name of file
     name_list = []
-    for year in list(range(startYR, endYR)):
+    for year in list(range(startYR, endYR+1)):
         name_list.append(name + str(year) + '.CSV')
     return name_list
 
@@ -36,10 +36,12 @@ print(mod_set)
 def Load_NHTSA_Data(filenames, start_yr):
     # todo: addstate,state#,yearofaccidenttoeachcsvNHTSA,case#
     # todo: age of vehicle column
-    old_cols = ['MOD_YEAR', 'MAKENAME', 'MAK_MODNAME', 'BODY_TYP', 'DEATHS']
-    df_final = pd.DataFrame(columns=['mod_year', 'Make', 'Model', 'BODY_TYP'])
+    old_cols = ['MOD_YEAR', 'MAKENAME', 'MAK_MODNAME', 'BODY_TYPNAME', 'DEATHS']
+    df_final = pd.DataFrame(columns=['mod_year', 'Make', 'Model', 'BODY_TYPNAME'])
     # read through each filename in filenames
-    for file in filenames:
+    start_cnt = start_yr
+    for i, file in enumerate(filenames):
+
         df = pd.read_csv(file, encoding='latin1', header=0, usecols=old_cols).astype(str)
         # print(df.isna().sum())
         df.rename(columns={"MOD_YEAR": "mod_year",
@@ -52,7 +54,13 @@ def Load_NHTSA_Data(filenames, start_yr):
         df = df[~df['Make'].str.contains("Unknown")] # filter out Unknown rows
         df = df[df['Deaths'] > 0] #Filter for fatalities only
         df.drop('Deaths', axis=1, inplace=True) #drop death column
-        df["case_year"] = start_yr
+
+        if i == 0:
+            df["case_year"] = str(start_yr).strip()
+        else:
+            start_cnt += 1
+            df["case_year"] = str(start_cnt).strip()
+
         for i, v in enumerate(df["Model"]):
             print(i)
             print(v)
@@ -78,7 +86,7 @@ def Load_NHTSA_Data(filenames, start_yr):
         df.fillna('unknown', inplace=True)
         #df['Model'].fillna('unknown', inplace=True)
         # create final df by concating the old with the new trimmed df
-        start_yr += 1
+
         df_final = pd.concat([df_final, df], ignore_index=True)
 
     #df_final.drop_duplicates(inplace=True, ignore_index=True)
@@ -88,7 +96,7 @@ def Load_NHTSA_Data(filenames, start_yr):
 # list file names to concat into one df
 filenames = file_namer(2016, 2020, 'Vehicle')
 NHTSA_Data = Load_NHTSA_Data(filenames, start_yr)
-print(NHTSA_Data[0:10])
+print(NHTSA_Data)
 compression_opts = dict(method='zip', archive_name='NHTSA.csv')
 
 #NHTSA_Data.to_csv('NHTSA.zip', index=False, compression=compression_opts)
