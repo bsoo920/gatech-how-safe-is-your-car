@@ -5,3 +5,9 @@ NHTSA.csv
 NHTSA-FARS-download/*.csv
 NHTSA-FARS-download/*CSV/
 NHTSA-FARS-download/*.zip
+NHTSA-FARS-download/models/Acura_models2020.csv
+kevin/VariableAttributesVehicleMake2020.csv
+kevin/query_models.csv
+NHTSA-FARS-download/Vehicle2015.CSV
+query_models.csv
+NHTSA-FARS-download/Vehicle2015.CSV
