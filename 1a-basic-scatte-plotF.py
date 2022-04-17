@@ -50,6 +50,7 @@ x['crown_vicoria'] = df_agg.query("MAKE==12 and MODEL==16 and MOD_YEAR==1999")
 
 
 d_avg_fatal = {}
+coeff_all = {}
 for k,v in x.items():
     print(f'*** {k} ***\n', v)
     ax = v.plot.scatter(x='YEAR',y='fatalities',label=k)
@@ -61,11 +62,34 @@ for k,v in x.items():
     # create lists for year and fatalities to iterate through
     x_years = v['YEAR'].to_list()
     y_fatal = v['fatalities'].to_list()
+    
     # find number of years of data
     num_years = len(x_years)
+    
+    # get regression coefficients for all data provided at least 2 years of data
+    # otherwise coefficients = None and assign coefficients to coeff_all dictionary
+    if num_years > 1:
+        slope, intercept = np.polyfit(x_years, y_fatal, 1)
+        coeff_all[k] = {'slope': slope, 'intercept': intercept}
+        y_cal2 = []
+        for m in range(len(x_years)):
+            y_cal2.append(x_years[m]*coeff_all[k]['slope'] + coeff_all[k]['intercept'])
+        #print(y_cal2)       
+    else:
+        coeff_all[k] = {'slope': None, 'intercept': None}
+
+    # print linear regression on top of scatter plot (if slope != None)
+    if  coeff_all[k]['slope'] != None:   
+        ax2 = v.plot.scatter(x='YEAR',y='fatalities',label=k)
+        plot.title(k)
+        ax2.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
+        plot.plot(x_years, y_cal2, 'r')
+        plot.show()
+    
+    
     # set flag for case of zero fatalities for all years
     flag = 0
-    # iterate through years to find first non-zero fatalities (assume that this model
+    # iterate through years to find first year with non-zero fatalities (assume that this model
     # did not exist in prior years) and break for year of first non-zero fatalities
     for i in range(len(x_years)):
         if y_fatal[i] != 0:
@@ -81,10 +105,10 @@ for k,v in x.items():
     else:
         # check years of non-zero fatalties after the first year of non-zero fatalities
         # if i+3 > num_years-1 then only one or two years of non-zero fatalities
-        if (num_years - 3-1) > i+3:
+        if num_years  > i+3:
             end = i + 3
         else:
-            end = num_years - 1
+            end = num_years 
         # set x and y data for polyfit function   
         yf = y_fatal[i:end]
         xy = x_years[i:end]
@@ -152,10 +176,10 @@ for k,v in x2.items():
     else:
         # check years of non-zero fatalties after the first year of non-zero fatalities
         # if i+3 > num_years-1 then only one or two years of non-zero fatalities
-        if (num_years - 3-1) > i+3:
+        if num_years  > i+3:
             end = i + 3
         else:
-            end = num_years - 1
+            end = num_years 
         # set x and y data for polyfit function   
         yf = y_fatal2[i:end]
         xy = x_years2[i:end]
@@ -179,7 +203,6 @@ for k,v in x2.items():
 
         print(f"average fatality rate per year over first three years is {d_avg_fatal_make[k]}, coeff {coeff}")
         print("  ")
-
 
 '''
 #easily creates a name list for pulling in csv filenames
