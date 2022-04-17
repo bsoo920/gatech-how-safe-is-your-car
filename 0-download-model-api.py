@@ -34,7 +34,7 @@ for [makeID, make, _, _] in makes:
 
         # os.makedirs(dir+make, exist_ok = True)
         make = make.replace('/','-')
-        open( f"{dir}model-lookup/{make}_models{year}.csv", "wb" ).write(rModels.content)
+        open( f"{dir}model-lookup/{makeID}-{make}_models{year}.csv", "wb" ).write(rModels.content)
         print('success:', datetime.now().strftime("%d/%m/%Y %H:%M:%S"), year, makeID, make)
 
     except Exception as e:
