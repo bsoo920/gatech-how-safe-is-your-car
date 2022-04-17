@@ -6,20 +6,19 @@ import pandas as pd
 dir = 'NHTSA-FARS-download/'
 
 
-id_list = []
-model_list = []
-make_list = []
-year_list = []
-
-# Download from "make" API, which returns same data from 2010-2020 (except 2010 & 2011 had 2 fewer rows), and that pre-2010 gives errors.
+# # Download from "make" API, which returns same data from 2010-2020 (except 2010 & 2011 had 2 fewer rows), and that pre-2010 gives errors.
 year=2020
+file = f'{dir}make{year}.csv'
+
 urlMakes = f"https://crashviewer.nhtsa.dot.gov/CrashAPI/definitions/GetVariableAttributes?variable=make&caseYear={year}&format=csv"
 r = requests.get(urlMakes, allow_redirects=True)
-open(dir+'make%d.csv' % (year), 'wb').write(r.content)      # downloading for reference only
+open(file, 'wb').write(r.content)
+
 print(year, 'success', datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
-makes = csv.reader( r.text.splitlines())
+makes = csv.reader( open(file,'r'))
 next(makes)     #skip header row
+
 for [makeID, make, _, _] in makes:
     # makes when iterated through:
     # ['id', 'text', 'from_year', 'to_year']
@@ -34,9 +33,11 @@ for [makeID, make, _, _] in makes:
         rModels = requests.get(url, allow_redirects=True)
 
         # os.makedirs(dir+make, exist_ok = True)
+        make = make.replace('/','-')
         open( f"{dir}model-lookup/{make}_models{year}.csv", "wb" ).write(rModels.content)
         print('success:', datetime.now().strftime("%d/%m/%Y %H:%M:%S"), year, makeID, make)
-    except:
-        print('FAILED:', datetime.now().strftime("%d/%m/%Y %H:%M:%S"), year, makeID, make)
+
+    except Exception as e:
+        print('FAILED:', datetime.now().strftime("%d/%m/%Y %H:%M:%S"), year, makeID, make, '\n', e)
 
     # break
