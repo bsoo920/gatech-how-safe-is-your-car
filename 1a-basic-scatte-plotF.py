@@ -51,11 +51,11 @@ x['crown_vicoria'] = df_agg.query("MAKE==12 and MODEL==16 and MOD_YEAR==1999")
 
 d_avg_fatal = {}
 for k,v in x.items():
-    print(f'*** {k} ***\n', v)    
+    print(f'*** {k} ***\n', v)
     ax = v.plot.scatter(x='YEAR',y='fatalities',label=k)
     plot.title(k)
     ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
-    # plot.show()
+    plot.show()
 
     # start of linear regression calculation
     # create lists for year and fatalities to iterate through
@@ -106,7 +106,7 @@ for k,v in x.items():
             #print("average calculated is ", average)
             d_avg_fatal[k] = average
 
-        print("average fatality rate per year over first three years is ", d_avg_fatal[k])
+        print(f"average fatality rate per year over first three years is {d_avg_fatal[k]}, coeff {coeff}")
         print("  ")
            
        
@@ -117,12 +117,8 @@ df_agg2 = df_final.groupby(['MOD_YEAR', 'MAKE', 'YEAR']) \
 print(df_agg2[:20])       
 
 x2={}
-x2['camry'] = df_agg2.query("MAKE==49 and MOD_YEAR==1999")  #camry
-x2['tacoma'] = df_agg2.query("MAKE==49 and MOD_YEAR==1999")  #tacoma
-x2['mustang'] = df_agg2.query("MAKE==12 and MOD_YEAR==1999")
-x2['ford_f_series'] = df_agg2.query("MAKE==12 and MOD_YEAR==1999")
-x2['crown_vicoria'] = df_agg2.query("MAKE==12 and MOD_YEAR==1999")
-
+x2['toyota'] = df_agg2.query("MAKE==49 and MOD_YEAR==1999")  #camry
+x2['ford'] = df_agg2.query("MAKE==12 and MOD_YEAR==1999")
 
 d_avg_fatal_make = {}
 for k,v in x2.items():
@@ -130,7 +126,7 @@ for k,v in x2.items():
     ax = v.plot.scatter(x='YEAR',y='fatalities',label=k)
     plot.title(k)
     ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
-    # plot.show()
+    plot.show()
 
     # start of linear regression calculation
     # create lists for year and fatalities to iterate through
@@ -181,7 +177,7 @@ for k,v in x2.items():
             #print("average calculated is ", average)
             d_avg_fatal_make[k] = average
 
-        print("average fatality rate per year over first three years is ", d_avg_fatal[k])
+        print(f"average fatality rate per year over first three years is {d_avg_fatal_make[k]}, coeff {coeff}")
         print("  ")
 
 
