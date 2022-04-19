@@ -1,50 +1,50 @@
-id,modelname,make
-32,200SX/240SX,
-33,210/1200/B210,
-35,310,
-41,311/411,
-48,350Z/370Z,
-36,510,
-37,610,
-38,710,
-39,810/Maxima,
-47,Altima,
-444,Altra EV*,
-442,Axxess,
-52,Cube,
-31,F-10,
-472,Frontier (1998 on),
-53,GT-R,
-403,Juke,
-56,Kicks,
-55,Leaf,
-870,Medium Heavy Van-Based Vehicle,
-883,Medium/Heavy – COE high entry,
-45,Micra,
-49,"Murano (For 2003-2018 only.  For model years 2019 on, see 35-422.)",
-422,"Murano (For 2019 on.  For model years 2003-2018, see 35-056.)",
-471,Nissan/Datsun Pickup (1955-1997),
-461,NV,
-446,NV200/eNV200,
-46,NX 1600/2000,
-398,Other (automobile),
-498,Other (light truck),
-898,Other (medium/heavy truck),
-401,Pathfinder,
-421,Pathfinder Armada,
-44,Pulsar,
-443,Quest,
-40,Roadster,
-51,"Rogue (For 2008-2018 only.  For model years 2019 on, see 35-404.)",
-404,"Rogue (For 2019 on.  For model years 2008-2018, see 35-051.)",
-43,Sentra,
-42,Stanza,
-473,Titan (from 2004-06; see 481 for 2007 on),
-481,Titan (from 2007 on; see 473 for 2004-06),
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown (NISSAN/DATSUN),
-441,Van,
-50,Versa,
-402,Xterra,
-34,"Z-car, ZX",
+id,modelname,makeID
+32,200SX/240SX,35
+33,210/1200/B210,35
+35,310,35
+41,311/411,35
+48,350Z/370Z,35
+36,510,35
+37,610,35
+38,710,35
+39,810/Maxima,35
+47,Altima,35
+444,Altra EV*,35
+442,Axxess,35
+52,Cube,35
+31,F-10,35
+472,Frontier (1998 on),35
+53,GT-R,35
+403,Juke,35
+56,Kicks,35
+55,Leaf,35
+870,Medium Heavy Van-Based Vehicle,35
+883,Medium/Heavy – COE high entry,35
+45,Micra,35
+49,"Murano (For 2003-2018 only.  For model years 2019 on, see 35-422.)",35
+422,"Murano (For 2019 on.  For model years 2003-2018, see 35-056.)",35
+471,Nissan/Datsun Pickup (1955-1997),35
+461,NV,35
+446,NV200/eNV200,35
+46,NX 1600/2000,35
+398,Other (automobile),35
+498,Other (light truck),35
+898,Other (medium/heavy truck),35
+401,Pathfinder,35
+421,Pathfinder Armada,35
+44,Pulsar,35
+443,Quest,35
+40,Roadster,35
+51,"Rogue (For 2008-2018 only.  For model years 2019 on, see 35-404.)",35
+404,"Rogue (For 2019 on.  For model years 2008-2018, see 35-051.)",35
+43,Sentra,35
+42,Stanza,35
+473,Titan (from 2004-06; see 481 for 2007 on),35
+481,Titan (from 2007 on; see 473 for 2004-06),35
+399,Unknown (automobile),35
+499,Unknown (light truck),35
+999,Unknown (NISSAN/DATSUN),35
+441,Van,35
+50,Versa,35
+402,Xterra,35
+34,"Z-car, ZX",35

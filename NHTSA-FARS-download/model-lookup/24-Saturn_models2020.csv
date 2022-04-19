@@ -1,18 +1,18 @@
-id,modelname,make
-11,Astra,
-9,Aura,
-4,EV1/EGV1*,
-7,Ion,
-5,LS,
-6,LW,
-398,Other (automobile),
-10,Outlook,
-441,Relay,
-2,SC,
-8,Sky,
-1,SL,
-3,SW,
-399,Unknown (automobile),
-499,Unknown (Light truck),
-999,Unknown (SATURN),
-401,Vue,
+id,modelname,makeID
+11,Astra,24
+9,Aura,24
+4,EV1/EGV1*,24
+7,Ion,24
+5,LS,24
+6,LW,24
+398,Other (automobile),24
+10,Outlook,24
+441,Relay,24
+2,SC,24
+8,Sky,24
+1,SL,24
+3,SW,24
+399,Unknown (automobile),24
+499,Unknown (Light truck),24
+999,Unknown (SATURN),24
+401,Vue,24

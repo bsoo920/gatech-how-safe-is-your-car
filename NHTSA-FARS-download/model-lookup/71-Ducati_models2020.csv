@@ -1,8 +1,8 @@
-id,modelname,make
-701,0-50cc,
-703,125-349cc,
-704,350-449cc,
-705,450-749cc,
-702,51-124cc,
-706,750cc or greater,
-709,Unknown cc,
+id,modelname,makeID
+701,0-50cc,71
+703,125-349cc,71
+704,350-449cc,71
+705,450-749cc,71
+702,51-124cc,71
+706,750cc or greater,71
+709,Unknown cc,71

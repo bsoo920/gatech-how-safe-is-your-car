@@ -1,8 +1,8 @@
-id,modelname,make
-32,America,
-34,Healey 100/3000,
-33,Healey Sprite,
-31,Marina,
-35,Mini/Mini Cooper/Mini Moke,
-398,Other (automobile),
-399,Unknown (automobile),
+id,modelname,makeID
+32,America,33
+34,Healey 100/3000,33
+33,Healey Sprite,33
+31,Marina,33
+35,Mini/Mini Cooper/Mini Moke,33
+398,Other (automobile),33
+399,Unknown (automobile),33

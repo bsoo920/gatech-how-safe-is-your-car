@@ -1,21 +1,21 @@
-id,modelname,make
-981,Bus**: Conventional (Engine out front),
-983,"Bus**: Rear engine, Flat front",
-982,"Bus: Front engine, Flat front",
-881,Medium/Heavy - CBE,
-890,Medium/Heavy – COE entry position unknown,
-883,Medium/Heavy – COE high entry,
-882,Medium/Heavy – COE low entry,
-884,Medium/Heavy – Unknown engine location,
-850,Motorhome,
-466,Multistop Van,
-988,Other (bus),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-498,Other light truck,
-481,Pickup,
-421,Scout,
-431,Travelall,
-989,Unknown (bus),
-999,Unknown (INTL. HARVESTER/ NAVISTAR),
-499,Unknown light truck,
+id,modelname,makeID
+981,Bus**: Conventional (Engine out front),84
+983,"Bus**: Rear engine, Flat front",84
+982,"Bus: Front engine, Flat front",84
+881,Medium/Heavy - CBE,84
+890,Medium/Heavy – COE entry position unknown,84
+883,Medium/Heavy – COE high entry,84
+882,Medium/Heavy – COE low entry,84
+884,Medium/Heavy – Unknown engine location,84
+850,Motorhome,84
+466,Multistop Van,84
+988,Other (bus),84
+898,Other (medium/heavy truck),84
+998,Other (vehicle),84
+498,Other light truck,84
+481,Pickup,84
+421,Scout,84
+431,Travelall,84
+989,Unknown (bus),84
+999,Unknown (INTL. HARVESTER/ NAVISTAR),84
+499,Unknown light truck,84

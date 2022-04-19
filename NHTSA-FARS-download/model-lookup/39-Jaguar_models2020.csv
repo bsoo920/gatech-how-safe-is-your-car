@@ -1,18 +1,18 @@
-id,modelname,make
-402,E-Pace,
-401,F-Pace,
-38,F-Type,
-403,I-Pace,
-398,Other (automobile),
-498,Other (light truck),
-34,S-Type,
-399,Unknown (automobile),
-999,Unknown (JAGUAR),
-499,Unknown (light truck),
-36,X-Type,
-39,XE,
-37,XF/XFR,
-31,"XJ-S, XK8 Coupe",
-32,XJ/XJL/XJ6/12/XJR/XJ8/  XJ8L Sedan/Coupe,
-33,XK-E,
-35,XKR/XK,
+id,modelname,makeID
+402,E-Pace,39
+401,F-Pace,39
+38,F-Type,39
+403,I-Pace,39
+398,Other (automobile),39
+498,Other (light truck),39
+34,S-Type,39
+399,Unknown (automobile),39
+999,Unknown (JAGUAR),39
+499,Unknown (light truck),39
+36,X-Type,39
+39,XE,39
+37,XF/XFR,39
+31,"XJ-S, XK8 Coupe",39
+32,XJ/XJL/XJ6/12/XJR/XJ8/  XJ8L Sedan/Coupe,39
+33,XK-E,39
+35,XKR/XK,39

@@ -29,15 +29,27 @@ for [makeID, make, _, _] in makes:
     year=2020
 
     try:
-        url = f"https://crashviewer.nhtsa.dot.gov/CrashAPI/definitions/GetVariableAttributesForModel?variable=model&caseYear={year}&make={makeID}&format=csv"
-        rModels = requests.get(url, allow_redirects=True)
-
         # os.makedirs(dir+make, exist_ok = True)
         make = make.replace('/','-')
-        open( f"{dir}model-lookup/{makeID}-{make}_models{year}.csv", "wb" ).write(rModels.content)
+        with open( f"{dir}model-lookup/{makeID}-{make}_models{year}.csv", "w" ) as w:
+        
+            url = f"https://crashviewer.nhtsa.dot.gov/CrashAPI/definitions/GetVariableAttributesForModel?variable=model&caseYear={year}&make={makeID}&format=csv"
+            rModels = requests.get(url, allow_redirects=True)
+            models = list( csv.reader(rModels.content.decode('utf-8').splitlines(), delimiter=','))
+
+            for i in range(len(models)):
+                if i==0:
+                    models[i][2] = 'makeID'
+                else:
+                    models[i][2] = makeID
+
+                writer = csv.writer(w)
+                writer.writerow(models[i])
+        
         print('success:', datetime.now().strftime("%d/%m/%Y %H:%M:%S"), year, makeID, make)
 
     except Exception as e:
         print('FAILED:', datetime.now().strftime("%d/%m/%Y %H:%M:%S"), year, makeID, make, '\n', e)
 
     # break
+

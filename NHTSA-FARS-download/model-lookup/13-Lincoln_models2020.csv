@@ -1,24 +1,24 @@
-id,modelname,make
-401,Aviator,
-423,Aviator,
-481,Blackwood,
-17,Continental,
-5,Continental ('82 on),
-1,Continental (thru '81)/ Town Car,
-403,Corsair,
-12,LS,
-2,Mark,
-482,Mark LT,
-402,MKC,
-15,MKS,
-16,MKT,
-14,MKX,
-422,Nautilus,
-421,Navigator,
-398,Other (automobile),
-498,Other (light truck),
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown (LINCOLN),
-11,Versailles,
-13,Zephyr/MKZ,
+id,modelname,makeID
+401,Aviator,13
+423,Aviator,13
+481,Blackwood,13
+17,Continental,13
+5,Continental ('82 on),13
+1,Continental (thru '81)/ Town Car,13
+403,Corsair,13
+12,LS,13
+2,Mark,13
+482,Mark LT,13
+402,MKC,13
+15,MKS,13
+16,MKT,13
+14,MKX,13
+422,Nautilus,13
+421,Navigator,13
+398,Other (automobile),13
+498,Other (light truck),13
+399,Unknown (automobile),13
+499,Unknown (light truck),13
+999,Unknown (LINCOLN),13
+11,Versailles,13
+13,Zephyr/MKZ,13

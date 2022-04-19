@@ -1,28 +1,28 @@
-id,modelname,make
-40,EX35/EX37,
-39,FX35/FX37/FX45/FX50,
-33,G20,
-37,G25/G35/G37,
-35,I30,
-36,I35,
-34,J30,
-402,JX35,
-31,M30,
-38,M35/M37/M45/M56,
-398,Other (automobile),
-498,Other (light truck),
-45,Q40,
-32,Q45,
-41,Q50,
-42,Q60,
-43,Q70,
-47,QX30,
-401,QX4,
-44,QX50,
-421,QX56,
-403,QX60,
-404,QX70,
-422,QX80,
-399,Unknown (automobile),
-999,Unknown (INFINITI),
-499,Unknown (Light Truck),
+id,modelname,makeID
+40,EX35/EX37,58
+39,FX35/FX37/FX45/FX50,58
+33,G20,58
+37,G25/G35/G37,58
+35,I30,58
+36,I35,58
+34,J30,58
+402,JX35,58
+31,M30,58
+38,M35/M37/M45/M56,58
+398,Other (automobile),58
+498,Other (light truck),58
+45,Q40,58
+32,Q45,58
+41,Q50,58
+42,Q60,58
+43,Q70,58
+47,QX30,58
+401,QX4,58
+44,QX50,58
+421,QX56,58
+403,QX60,58
+404,QX70,58
+422,QX80,58
+399,Unknown (automobile),58
+999,Unknown (INFINITI),58
+499,Unknown (Light Truck),58

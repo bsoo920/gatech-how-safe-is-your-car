@@ -1,14 +1,14 @@
-id,modelname,make
-35,164 (Alpha 164),
-36,4c,
-37,Giulia,
-34,GTV-6,
-398,Other (automobile),
-498,Other (light truck),
-31,Spider (Spyder),
-32,Sports Sedan,
-33,Sprint/Special,
-401,"Stelvio (For 2018 only.  For model years 2019 on, see 31-422.)",
-422,"Stelvio (For 2019 on.  For model year 2018, see 31-401.)",
-999,Unknown (ALFA ROMEO),
-399,Unknown (automobile),
+id,modelname,makeID
+35,164 (Alpha 164),31
+36,4c,31
+37,Giulia,31
+34,GTV-6,31
+398,Other (automobile),31
+498,Other (light truck),31
+31,Spider (Spyder),31
+32,Sports Sedan,31
+33,Sprint/Special,31
+401,"Stelvio (For 2018 only.  For model years 2019 on, see 31-422.)",31
+422,"Stelvio (For 2019 on.  For model year 2018, see 31-401.)",31
+999,Unknown (ALFA ROMEO),31
+399,Unknown (automobile),31

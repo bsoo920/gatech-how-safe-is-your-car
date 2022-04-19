@@ -1,35 +1,35 @@
-id,modelname,make
-8,Apollo/Skylark,
-26,Cascada,
-7,Century,
-3,"Electra/Electra 225/ Park Limited, Park Avenue, Ultra, Base",
-24,Enclave (2008-12 model years only.  For 2013 on see model 421.),
-421,Enclave (2013 on.  See model 024 for 2008-12 model years.),
-404,Encore,
-405,Envision,
-22,LaCrosse,
-2,"LeSabre/Centurion/ Estate Wagon, Invicta, Custom, Limited, T-Type, Ltd, C.M.I, LE",
-23,Lucerne,
-33,Opel GT,
-34,Opel Isuzu,
-31,Opel Kadett,
-32,Opel Manta,
-398,Other (automobile),
-498,Other (light truck),
-402,Rainier,
-21,Reatta,
-19,Regal (2011 on),
-20,Regal (FWD),
-10,Regal (RWD only),
-401,Rendezvous,
-5,Riviera,
-4,Roadmaster,
-12,Skyhawk,
-15,Skylark (76-85),
-18,Somerset/Skylark,
-1,Special/Skylark,
-441,Terraza,
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown BUICK,
-25,Verano,
+id,modelname,makeID
+8,Apollo/Skylark,18
+26,Cascada,18
+7,Century,18
+3,"Electra/Electra 225/ Park Limited, Park Avenue, Ultra, Base",18
+24,Enclave (2008-12 model years only.  For 2013 on see model 421.),18
+421,Enclave (2013 on.  See model 024 for 2008-12 model years.),18
+404,Encore,18
+405,Envision,18
+22,LaCrosse,18
+2,"LeSabre/Centurion/ Estate Wagon, Invicta, Custom, Limited, T-Type, Ltd, C.M.I, LE",18
+23,Lucerne,18
+33,Opel GT,18
+34,Opel Isuzu,18
+31,Opel Kadett,18
+32,Opel Manta,18
+398,Other (automobile),18
+498,Other (light truck),18
+402,Rainier,18
+21,Reatta,18
+19,Regal (2011 on),18
+20,Regal (FWD),18
+10,Regal (RWD only),18
+401,Rendezvous,18
+5,Riviera,18
+4,Roadmaster,18
+12,Skyhawk,18
+15,Skylark (76-85),18
+18,Somerset/Skylark,18
+1,Special/Skylark,18
+441,Terraza,18
+399,Unknown (automobile),18
+499,Unknown (light truck),18
+999,Unknown BUICK,18
+25,Verano,18

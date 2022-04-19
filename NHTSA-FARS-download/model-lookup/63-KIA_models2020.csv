@@ -1,23 +1,23 @@
-id,modelname,make
-35,Amanti,
-421,Borrego,
-39,Cadenza,
-38,Forte,
-40,K900,
-403,Niro,
-34,Optima,
-398,Other (automobile),
-498,Other (Light Truck),
-32,Rio/Rio5,
-36,Rondo,
-441,Sedona,
-31,Sephia,
-402,Sorento,
-37,Soul,
-33,Spectra/Spectra5,
-401,Sportage,
-41,Stinger,
-422,Telluride,
-399,Unknown (automobile),
-999,Unknown (KIA),
-499,Unknown (light truck),
+id,modelname,makeID
+35,Amanti,63
+421,Borrego,63
+39,Cadenza,63
+38,Forte,63
+40,K900,63
+403,Niro,63
+34,Optima,63
+398,Other (automobile),63
+498,Other (Light Truck),63
+32,Rio/Rio5,63
+36,Rondo,63
+441,Sedona,63
+31,Sephia,63
+402,Sorento,63
+37,Soul,63
+33,Spectra/Spectra5,63
+401,Sportage,63
+41,Stinger,63
+422,Telluride,63
+399,Unknown (automobile),63
+999,Unknown (KIA),63
+499,Unknown (light truck),63

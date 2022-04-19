@@ -1,9 +1,9 @@
-id,modelname,make
-44,Medallion,
-398,Other (automobile),
-40,Premier,
-34,Summit (excludes wagon),
-45,Summit Wagon,
-37,Talon,
-399,Unknown (automobile),
-41,Vision,
+id,modelname,makeID
+44,Medallion,10
+398,Other (automobile),10
+40,Premier,10
+34,Summit (excludes wagon),10
+45,Summit Wagon,10
+37,Talon,10
+399,Unknown (automobile),10
+41,Vision,10

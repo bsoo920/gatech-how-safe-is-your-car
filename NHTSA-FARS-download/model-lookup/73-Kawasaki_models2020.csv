@@ -1,14 +1,14 @@
-id,modelname,make
-701,0-50cc,
-731,0-50cc (ATV),
-703,125-349cc,
-733,125-349cc (ATV),
-704,350-449cc,
-734,350cc or greater (ATV),
-705,450-749cc,
-702,51-124cc,
-732,51-124cc (ATV),
-706,750cc or greater,
-998,Other (Vehicle),
-709,Unknown cc,
-739,Unknown cc (ATV),
+id,modelname,makeID
+701,0-50cc,73
+731,0-50cc (ATV),73
+703,125-349cc,73
+733,125-349cc (ATV),73
+704,350-449cc,73
+734,350cc or greater (ATV),73
+705,450-749cc,73
+702,51-124cc,73
+732,51-124cc (ATV),73
+706,750cc or greater,73
+998,Other (Vehicle),73
+709,Unknown cc,73
+739,Unknown cc (ATV),73

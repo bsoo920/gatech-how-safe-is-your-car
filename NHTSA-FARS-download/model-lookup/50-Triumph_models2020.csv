@@ -1,19 +1,19 @@
-id,modelname,make
-701,0-50cc,
-703,125-349cc,
-704,350-449cc,
-705,450-749cc,
-702,51-124cc,
-706,750cc or greater,
-32,GT-6,
-36,Herald,
-398,Other (automobile),
-31,Spitfire,
-37,Stag,
-33,TR4,
-34,TR6,
-35,TR7/TR8,
-399,Unknown (automobile),
-799,Unknown (motored cycle),
-999,Unknown (TRIUMPH),
-709,Unknown cc,
+id,modelname,makeID
+701,0-50cc,50
+703,125-349cc,50
+704,350-449cc,50
+705,450-749cc,50
+702,51-124cc,50
+706,750cc or greater,50
+32,GT-6,50
+36,Herald,50
+398,Other (automobile),50
+31,Spitfire,50
+37,Stag,50
+33,TR4,50
+34,TR6,50
+35,TR7/TR8,50
+399,Unknown (automobile),50
+799,Unknown (motored cycle),50
+999,Unknown (TRIUMPH),50
+709,Unknown cc,50

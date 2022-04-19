@@ -1,30 +1,30 @@
-id,modelname,make
-9,Bobcat,
-3,Capri- domestic (1967 see 008),
-31,Capri-foreign,
-8,Comet,
-38,Cougar (1999 on),
-4,Cougar/XR7 (1967-1997),
-2,Cyclone,
-13,Lynx/LN7,
-39,Marauder,
-402,Mariner,
-6,Marquis/Monterey (car version; for van version 2004 on see code 444) /Grand Marquis,
-21,Milan,
-11,Monarch,
-20,Montego (2005 on),
-10,Montego (prior to 1976; for 2005 on see code 020),
-444,Monterey (van version; for car version prior to 2004 see code 006),
-401,Mountaineer,
-37,Mystique,
-398,Other (automobile),
-498,Other (light truck),
-33,Pantera-foreign,
-17,Sable,
-15,Topaz,
-36,Tracer,
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown (MERCURY),
-443,Villager,
-12,Zephyr,
+id,modelname,makeID
+9,Bobcat,14
+3,Capri- domestic (1967 see 008),14
+31,Capri-foreign,14
+8,Comet,14
+38,Cougar (1999 on),14
+4,Cougar/XR7 (1967-1997),14
+2,Cyclone,14
+13,Lynx/LN7,14
+39,Marauder,14
+402,Mariner,14
+6,Marquis/Monterey (car version; for van version 2004 on see code 444) /Grand Marquis,14
+21,Milan,14
+11,Monarch,14
+20,Montego (2005 on),14
+10,Montego (prior to 1976; for 2005 on see code 020),14
+444,Monterey (van version; for car version prior to 2004 see code 006),14
+401,Mountaineer,14
+37,Mystique,14
+398,Other (automobile),14
+498,Other (light truck),14
+33,Pantera-foreign,14
+17,Sable,14
+15,Topaz,14
+36,Tracer,14
+399,Unknown (automobile),14
+499,Unknown (light truck),14
+999,Unknown (MERCURY),14
+443,Villager,14
+12,Zephyr,14

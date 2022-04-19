@@ -1,38 +1,38 @@
-id,modelname,make
-43,1-Series,
-703,125-349cc,
-31,"1600, 1800, 2000,2002",
-48,2-Series,
-34,3-series,
-704,350-449 cc,
-47,4-Series,
-705,450-749cc,
-35,5-series,
-36,6-series,
-37,7-series,
-706,750cc and over,
-38,8-series,
-33,Bavarian Sedan,
-32,Coupe (before 1975),
-707,Electric Motorcycle,
-45,i3,
-46,i8,
-398,Other (automobile),
-498,Other (light truck),
-399,Unknown (automobile),
-999,Unknown (BMW),
-499,Unknown (light truck),
-709,Unknown cc,
-41,V5,
-403,X1,
-405,X2,
-402,X3,
-49,X4,
-401,"X5 (For 2000-16.  For 2017 on, see model 421).",
-421,"X5 (For 2017 on. For 2000-16, see model 401)",
-44,"X6 (For 2008-2015. For 2016 on, see model 404.)",
-404,"X6 (For 2016 on. For 2008-2015, see model 044.)",
-422,X7,
-39,Z3,
-42,Z4,
-40,Z8,
+id,modelname,makeID
+43,1-Series,34
+703,125-349cc,34
+31,"1600, 1800, 2000,2002",34
+48,2-Series,34
+34,3-series,34
+704,350-449 cc,34
+47,4-Series,34
+705,450-749cc,34
+35,5-series,34
+36,6-series,34
+37,7-series,34
+706,750cc and over,34
+38,8-series,34
+33,Bavarian Sedan,34
+32,Coupe (before 1975),34
+707,Electric Motorcycle,34
+45,i3,34
+46,i8,34
+398,Other (automobile),34
+498,Other (light truck),34
+399,Unknown (automobile),34
+999,Unknown (BMW),34
+499,Unknown (light truck),34
+709,Unknown cc,34
+41,V5,34
+403,X1,34
+405,X2,34
+402,X3,34
+49,X4,34
+401,"X5 (For 2000-16.  For 2017 on, see model 421).",34
+421,"X5 (For 2017 on. For 2000-16, see model 401)",34
+44,"X6 (For 2008-2015. For 2016 on, see model 404.)",34
+404,"X6 (For 2016 on. For 2008-2015, see model 044.)",34
+422,X7,34
+39,Z3,34
+42,Z4,34
+40,Z8,34

@@ -1,4 +1,4 @@
-id,modelname,make
-31,Fortwo,
-398,Other (automobile),
-399,Unknown (automobile),
+id,modelname,makeID
+31,Fortwo,65
+398,Other (automobile),65
+399,Unknown (automobile),65

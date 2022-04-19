@@ -1,4 +1,4 @@
-id,modelname,make
-10,Imperial,
-398,Other (automobile,
-399,Unknown (automobile),
+id,modelname,makeID
+10,Imperial,8
+398,Other (automobile,8
+399,Unknown (automobile),8

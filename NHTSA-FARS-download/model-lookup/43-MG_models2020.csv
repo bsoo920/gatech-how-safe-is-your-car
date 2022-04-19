@@ -1,10 +1,10 @@
-id,modelname,make
-37,Magnette/Sports Sedans,
-34,MGA,
-32,MGB,
-33,MGB,
-36,MGC,
-31,Midget,
-398,Other (automobile),
-35,TA/TC/TD/TF,
-399,Unknown (automobile),
+id,modelname,makeID
+37,Magnette/Sports Sedans,43
+34,MGA,43
+32,MGB,43
+33,MGB,43
+36,MGC,43
+31,Midget,43
+398,Other (automobile),43
+35,TA/TC/TD/TF,43
+399,Unknown (automobile),43

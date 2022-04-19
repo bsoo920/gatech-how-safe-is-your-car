@@ -1,33 +1,33 @@
-id,modelname,make
-701,0-50cc,
-731,0-50cc (ATV),
-703,125-349cc,
-733,125-349cc (ATV),
-704,350-449cc,
-734,350cc or greater (ATV),
-705,450-749cc,
-702,51-124cc,
-732,51-124cc (ATV),
-706,750cc or greater,
-981,Bus**: Conventional (Engine out front),
-982,Bus: Front engine. Flat front,
-983,"Bus: Rear engine, Flat front",
-707,Electric Motorcycle,
-870,Medium Heavy Van-Based Vehicle,
-883,Medium/Heavy - COE high entry,
-882,Medium/Heavy - COE low entry,
-884,Medium/Heavy - Unknown engine location,
-881,Medium/Heavy – CBE,
-890,Medium/Heavy – COE entry position unknown,
-850,Motor Home,
-988,Other (bus),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-999,"Unknown (as to automobile, motored cycle, light truck or truck)",
-399,Unknown (automobile),
-989,Unknown (bus),
-499,Unknown (light truck),
-598,Unknown (LSG/NGV),
-599,Unknown (LSV/NGV),
-709,Unknown cc,
-739,Unknown cc (ATV),
+id,modelname,makeID
+701,0-50cc,99
+731,0-50cc (ATV),99
+703,125-349cc,99
+733,125-349cc (ATV),99
+704,350-449cc,99
+734,350cc or greater (ATV),99
+705,450-749cc,99
+702,51-124cc,99
+732,51-124cc (ATV),99
+706,750cc or greater,99
+981,Bus**: Conventional (Engine out front),99
+982,Bus: Front engine. Flat front,99
+983,"Bus: Rear engine, Flat front",99
+707,Electric Motorcycle,99
+870,Medium Heavy Van-Based Vehicle,99
+883,Medium/Heavy - COE high entry,99
+882,Medium/Heavy - COE low entry,99
+884,Medium/Heavy - Unknown engine location,99
+881,Medium/Heavy – CBE,99
+890,Medium/Heavy – COE entry position unknown,99
+850,Motor Home,99
+988,Other (bus),99
+898,Other (medium/heavy truck),99
+998,Other (vehicle),99
+999,"Unknown (as to automobile, motored cycle, light truck or truck)",99
+399,Unknown (automobile),99
+989,Unknown (bus),99
+499,Unknown (light truck),99
+598,Unknown (LSG/NGV),99
+599,Unknown (LSV/NGV),99
+709,Unknown cc,99
+739,Unknown cc (ATV),99

@@ -1,32 +1,32 @@
-id,modelname,make
-701,0-50cc,
-731,0-50cc (ATV),
-703,125-349cc,
-733,125-349cc (ATV),
-704,350-449cc,
-734,350cc or greater (ATV),
-705,450-749cc,
-702,51-124cc,
-732,51-124cc (ATV),
-706,750cc-over,
-33,Aerio,
-481,Equator,
-32,Esteem,
-34,Forenza,
-404,Grand Vitara (2003 on; see model 402 for models prior to 2003),
-41,Kizashi,
-398,Other (automobile),
-498,Other (light truck),
-36,Reno,
-401,Samurai,
-402,Sidekick/Vitara/ Vitara V6,
-31,Swift/SA310,
-40,SX4/SX4 Crossover,
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown (SUZUKI),
-709,Unknown cc,
-739,Unknown cc (ATV),
-35,Verona,
-403,X-90,
-405,XL-7 (2003 on; see 402 for 2002 model year),
+id,modelname,makeID
+701,0-50cc,53
+731,0-50cc (ATV),53
+703,125-349cc,53
+733,125-349cc (ATV),53
+704,350-449cc,53
+734,350cc or greater (ATV),53
+705,450-749cc,53
+702,51-124cc,53
+732,51-124cc (ATV),53
+706,750cc-over,53
+33,Aerio,53
+481,Equator,53
+32,Esteem,53
+34,Forenza,53
+404,Grand Vitara (2003 on; see model 402 for models prior to 2003),53
+41,Kizashi,53
+398,Other (automobile),53
+498,Other (light truck),53
+36,Reno,53
+401,Samurai,53
+402,Sidekick/Vitara/ Vitara V6,53
+31,Swift/SA310,53
+40,SX4/SX4 Crossover,53
+399,Unknown (automobile),53
+499,Unknown (light truck),53
+999,Unknown (SUZUKI),53
+709,Unknown cc,53
+739,Unknown cc (ATV),53
+35,Verona,53
+403,X-90,53
+405,XL-7 (2003 on; see 402 for 2002 model year),53

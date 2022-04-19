@@ -1,22 +1,22 @@
-id,modelname,make
-37,CL,
-41,ILX,
-31,Integra,
-32,Legend,
-421,MDX,
-43,NSX (2016 on.  For 1991-2005 see model 033.),
-33,NSX (For 1991-2005 only.  For 2016 on see model 043.),
-398,Other (automobile),
-498,Other (light truck),
-402,RDX,
-36,RL/RLX,
-38,RSX,
-401,SLX,
-35,TL,
-44,TLX,
-39,TSX,
-999,Unknown (ACURA),
-399,Unknown (automobile),
-499,Unknown (light truck),
-34,Vigor,
-40,ZDX,
+id,modelname,makeID
+37,CL,54
+41,ILX,54
+31,Integra,54
+32,Legend,54
+421,MDX,54
+43,NSX (2016 on.  For 1991-2005 see model 033.),54
+33,NSX (For 1991-2005 only.  For 2016 on see model 043.),54
+398,Other (automobile),54
+498,Other (light truck),54
+402,RDX,54
+36,RL/RLX,54
+38,RSX,54
+401,SLX,54
+35,TL,54
+44,TLX,54
+39,TSX,54
+999,Unknown (ACURA),54
+399,Unknown (automobile),54
+499,Unknown (light truck),54
+34,Vigor,54
+40,ZDX,54

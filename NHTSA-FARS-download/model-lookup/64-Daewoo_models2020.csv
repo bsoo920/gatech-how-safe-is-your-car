@@ -1,6 +1,6 @@
-id,modelname,make
-31,Lanos,
-33,Leganza,
-32,Nubira,
-398,Other (automobile),
-399,Unknown (automobile),
+id,modelname,makeID
+31,Lanos,64
+33,Leganza,64
+32,Nubira,64
+398,Other (automobile),64
+399,Unknown (automobile),64

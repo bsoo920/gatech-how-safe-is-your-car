@@ -1,4 +1,4 @@
-id,modelname,make
-31,Charade,
-401,Rocky,
-999,Unknown (DAIHATSU),
+id,modelname,makeID
+31,Charade,60
+401,Rocky,60
+999,Unknown (DAIHATSU),60

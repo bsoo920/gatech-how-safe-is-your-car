@@ -1,70 +1,70 @@
-id,modelname,make
-441,Aerostar,
-36,Aspire,
-401,"Bronco (thru 1977)/Bronco II/Explorer/Explorer Sport (Explorer for 1990-2018 only.  For model years 2019 on, see 12-425.)",
-421,Bronco-fullsize (1978-on),
-981,Bus**: Conventional (Engine out front),
-27,C-Max,
-26,City,
-35,Contour,
-472,Courier,
-16,"Crown Victoria  (For 2011 on, code as vehicle model 398)",
-461,E-Series Van/Econoline,
-403,EcoSport,
-24,"Edge (For model years 2007-2018 only.  For model years 2019 on, see 12-424.)",
-424,"Edge(For 2019 on.  For model years 2007-2018, see 12-024.)",
-31,English Ford,
-402,Escape,
-13,Escort/EXP/ZX2,
-423,Excursion,
-422,Expedition,
-425,Explorer (For 2019 on.  For model years 1990-2018 see 12-401.),
-473,Explorer Sport Trac,
-481,F-Series pickup,
-2,Fairlane,
-12,Fairmont,
-1,Falcon,
-33,Festiva,
-32,Fiesta,
-21,Five Hundred,
-25,Flex,
-37,Focus,
-443,Freestar,
-22,Freestyle,
-23,Fusion,
-11,Granada,
-38,GT,
-34,Laser,
-5,LTD II,
-6,LTD/Custom/Galaxy (all sizes),
-8,Maverick,
-881,Medium/Heavy – CBE,
-890,Medium/Heavy – COE entry position unknown,
-883,Medium/Heavy – COE high entry,
-882,Medium/Heavy – COE low entry,
-884,Medium/Heavy – Unknown engine location,
-880,"Medium/Heavy Pickup (pickup-style only - over 10,000 lbs)",
-870,Medium/Heavy Van-Based Vehicle,
-850,Motorhome,
-3,Mustang/Mustang II,
-398,Other (automobile),
-988,Other (bus),
-498,Other (light truck),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-9,Pinto,
-18,Probe,
-7,Ranchero,
-471,Ranger,
-17,Taurus/Taurus X,
-15,Tempo,
-4,Thunderbird (all sizes),
-10,Torino/Gran Torino/Elite,
-462,Transit,
-444,Transit Connect,
-399,Unknown (automobile),
-989,Unknown (bus),
-999,Unknown (FORD),
-499,Unknown (light truck),
-470,Van Derivative,
-442,Windstar,
+id,modelname,makeID
+441,Aerostar,12
+36,Aspire,12
+401,"Bronco (thru 1977)/Bronco II/Explorer/Explorer Sport (Explorer for 1990-2018 only.  For model years 2019 on, see 12-425.)",12
+421,Bronco-fullsize (1978-on),12
+981,Bus**: Conventional (Engine out front),12
+27,C-Max,12
+26,City,12
+35,Contour,12
+472,Courier,12
+16,"Crown Victoria  (For 2011 on, code as vehicle model 398)",12
+461,E-Series Van/Econoline,12
+403,EcoSport,12
+24,"Edge (For model years 2007-2018 only.  For model years 2019 on, see 12-424.)",12
+424,"Edge(For 2019 on.  For model years 2007-2018, see 12-024.)",12
+31,English Ford,12
+402,Escape,12
+13,Escort/EXP/ZX2,12
+423,Excursion,12
+422,Expedition,12
+425,Explorer (For 2019 on.  For model years 1990-2018 see 12-401.),12
+473,Explorer Sport Trac,12
+481,F-Series pickup,12
+2,Fairlane,12
+12,Fairmont,12
+1,Falcon,12
+33,Festiva,12
+32,Fiesta,12
+21,Five Hundred,12
+25,Flex,12
+37,Focus,12
+443,Freestar,12
+22,Freestyle,12
+23,Fusion,12
+11,Granada,12
+38,GT,12
+34,Laser,12
+5,LTD II,12
+6,LTD/Custom/Galaxy (all sizes),12
+8,Maverick,12
+881,Medium/Heavy – CBE,12
+890,Medium/Heavy – COE entry position unknown,12
+883,Medium/Heavy – COE high entry,12
+882,Medium/Heavy – COE low entry,12
+884,Medium/Heavy – Unknown engine location,12
+880,"Medium/Heavy Pickup (pickup-style only - over 10,000 lbs)",12
+870,Medium/Heavy Van-Based Vehicle,12
+850,Motorhome,12
+3,Mustang/Mustang II,12
+398,Other (automobile),12
+988,Other (bus),12
+498,Other (light truck),12
+898,Other (medium/heavy truck),12
+998,Other (vehicle),12
+9,Pinto,12
+18,Probe,12
+7,Ranchero,12
+471,Ranger,12
+17,Taurus/Taurus X,12
+15,Tempo,12
+4,Thunderbird (all sizes),12
+10,Torino/Gran Torino/Elite,12
+462,Transit,12
+444,Transit Connect,12
+399,Unknown (automobile),12
+989,Unknown (bus),12
+999,Unknown (FORD),12
+499,Unknown (light truck),12
+470,Van Derivative,12
+442,Windstar,12

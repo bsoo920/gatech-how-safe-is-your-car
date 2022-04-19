@@ -1,48 +1,48 @@
-id,modelname,make
-701,0-50cc,
-731,0-50cc (ATV),
-703,125-349cc,
-733,125-349cc (ATV),
-704,350-449cc,
-734,350cc or greater (ATV),
-705,450-749cc,
-702,51-124cc,
-732,51-124cc (ATV),
-706,750cc or greater,
-802,Auto-Union-DKW,
-981,Bus***: Conventional (Engine out front),
-982,"Bus: Front engine, Flat front",
-983,"Bus: Rear engine, Flat front",
-903,Carpenter,
-904,Collins Bus,
-905,DINA,
-803,Divco,
-707,Electric Motorcycle,
-806,Hino,
-881,Medium/Heavy – CBE,
-890,Medium/Heavy – COE entry position unknown,
-883,Medium/Heavy – COE high entry,
-882,Medium/Heavy – COE low entry,
-884,Medium/Heavy – Unknown engine location,
-870,Medium/Heavy Van-Based Vehicle,
-302,Meyers Motor,
-906,Mid Bus,
-850,Motor Home,
-902,Neoplan,
-907,Orion,
-805,Oshkosh,
-398,Other (automobile),
-988,Other (bus),
-498,Other (light truck),
-598,Other (LSV/NEV),
-898,Other (medium/heavy truck)**,
-998,Other (vehicle),
-807,Scania,
-809,Sterling,
-301,Think,
-808,UD,
-999,Unknown (OTHER MAKE),
-709,Unknown cc,
-739,Unknown cc (ATV),
-908,Van Hool,
-804,Western Star,
+id,modelname,makeID
+701,0-50cc,98
+731,0-50cc (ATV),98
+703,125-349cc,98
+733,125-349cc (ATV),98
+704,350-449cc,98
+734,350cc or greater (ATV),98
+705,450-749cc,98
+702,51-124cc,98
+732,51-124cc (ATV),98
+706,750cc or greater,98
+802,Auto-Union-DKW,98
+981,Bus***: Conventional (Engine out front),98
+982,"Bus: Front engine, Flat front",98
+983,"Bus: Rear engine, Flat front",98
+903,Carpenter,98
+904,Collins Bus,98
+905,DINA,98
+803,Divco,98
+707,Electric Motorcycle,98
+806,Hino,98
+881,Medium/Heavy – CBE,98
+890,Medium/Heavy – COE entry position unknown,98
+883,Medium/Heavy – COE high entry,98
+882,Medium/Heavy – COE low entry,98
+884,Medium/Heavy – Unknown engine location,98
+870,Medium/Heavy Van-Based Vehicle,98
+302,Meyers Motor,98
+906,Mid Bus,98
+850,Motor Home,98
+902,Neoplan,98
+907,Orion,98
+805,Oshkosh,98
+398,Other (automobile),98
+988,Other (bus),98
+498,Other (light truck),98
+598,Other (LSV/NEV),98
+898,Other (medium/heavy truck)**,98
+998,Other (vehicle),98
+807,Scania,98
+809,Sterling,98
+301,Think,98
+808,UD,98
+999,Unknown (OTHER MAKE),98
+709,Unknown cc,98
+739,Unknown cc (ATV),98
+908,Van Hool,98
+804,Western Star,98

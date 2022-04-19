@@ -1,9 +1,9 @@
-id,modelname,make
-701,0-50cc,
-703,125-349cc,
-704,350-449cc,
-705,450-749cc,
-702,51-124cc,
-706,750cc or greater,
-707,Electric Motorcycle,
-709,Unknown cc,
+id,modelname,makeID
+701,0-50cc,72
+703,125-349cc,72
+704,350-449cc,72
+705,450-749cc,72
+702,51-124cc,72
+706,750cc or greater,72
+707,Electric Motorcycle,72
+709,Unknown cc,72
