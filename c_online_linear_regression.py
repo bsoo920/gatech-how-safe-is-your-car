@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from b_offline_data_processing import aggregate
 
 ##-----Set up Server-----##
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
