@@ -2,7 +2,6 @@ import csv as csv
 import numpy as np
 import pandas as pd
 
-
 def readCrashData(accYearStart, accYearEnd, nrows=None):
     dir = 'NHTSA-FARS-download/'
     usecols = ['MOD_YEAR', 'MAKE', 'MODEL', 'DEATHS']
@@ -37,7 +36,7 @@ def aggregate(dfCrash, filterCondition='MOD_YEAR>=1999', groupBy=['MOD_YEAR', 'M
     return dfCrashAgg
 
 
-def getSales( verbose=False, nrows = None):
+def readSales( verbose=False, nrows = None):
     dir = 'car_sales_data/'
 
     df_original = pd.read_csv(f'{dir}car_sales_ID_NoOther.csv', encoding='latin1', header=0, nrows=nrows)
@@ -70,6 +69,7 @@ def getSales( verbose=False, nrows = None):
 
 
 if __name__ == '__main__':
+    print('pandas version', pd.__version__)
 
     df_agg = aggregate( readCrashData(accYearStart=2000, accYearEnd=2020)
                        ,filterCondition = 'MOD_YEAR>=1999'
@@ -82,11 +82,11 @@ if __name__ == '__main__':
     print(dfMasterCrashAgg[:5])
 
     # get sales data
-    df = getSales(verbose=True)
+    df = readSales(verbose=True)
     df.to_pickle( 'program_data/sales_melted.pkl')
     
     dfSales = pd.read_pickle('program_data/sales_melted.pkl')
-    print(dfSales[:5])
+    print(dfSales.query('Make_ID==49'))
 
 
 

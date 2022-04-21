@@ -60,34 +60,31 @@ def lookupSales(dfSales, Sales_Year=None, Make_ID=None, Model_ID=None, verbose=F
     if df.empty:
         year, sales = None, None
     
-    else:
-        if Sales_Year == None:
-            df = df.groupby(['Make_ID','Model_ID']) \
-                    .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
-                    .reset_index()
-            
-            year, sales = None, df.Sales.tolist()[0]
+    elif not (Sales_Year==None and Make_ID==None and Model_ID==None):
+        # further sales aggregation needed
+        grains = ['Make_ID','Model_ID','Sales_Year']
 
-        elif Model_ID == None:
-            df = df.groupby(['Make_ID','Sales_Year']) \
-                    .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
-                    .reset_index()
+        if Make_ID==None:
+            grains.remove('Make_ID')
 
-            year, sales = df.Sales_Year.tolist()[0], df.Sales.tolist()[0]
+        if Model_ID==None:
+            grains.remove('Model_ID')
 
-        elif Make_ID == None:
-            df = df.groupby(['Model_ID','Sales_Year']) \
-                    .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
-                    .reset_index()
+        if Sales_Year==None:
+            grains.remove('Sales_Year')
 
+        df = df.groupby( grains ) \
+                .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
+                .reset_index()
+
+        if Sales_Year!=None:
             year, sales = df.Sales_Year.tolist()[0], df.Sales.tolist()[0]
         else:
-            year, sales = None, None
+            year, sales =                      None, df.Sales.tolist()[0]
 
                 
     if verbose:
         print(condition)
-#         print(df)
         print('year',year,'sales',sales)
         print()
 
