@@ -1,31 +1,31 @@
-id,modelname,make
-18,200,
-51,300M/300/300C/300S,
-421,Aspen,
-44,Cirrus,
-41,Concorde,
-35,Conquest,
-9,Cordoba,
-55,Crossfire,
-50,Executive,
-15,Laser,
-16,LeBaron,
-17,LeBaron GTS/GTC,
-42,LHS,
-10,New Yorker (thru 78)/ Newport/5th Avenue/Imperial (1979-83) (excludes all FWD),
-14,New Yorker/E-Class/Imperial/ Fifth Avenue,
-398,Other (automobile),
-498,Other (light truck),
-443,Pacifica,
-54,Pacifica,
-53,"Prowler (2002 on)  (1997,1999-01 see Plymouth)",
-52,PT Cruiser,
-43,Sebring,
-21,SRT Viper,
-31,TC (Maserati Sport),
-441,Town and Country,
-399,Unknown (automobile),
-999,Unknown (CHRYSLER),
-499,Unknown (light truck),
-442,Voyager (2000 - 2003; 1984-00 see Plymouth. For 2020 on see 06-444.),
-444,Voyager (2020 on. For 2000-2003 see vehicle make 06-442. For 1984-2000 see Plymouth.),
+id,modelname,makeID
+18,200,6
+51,300M/300/300C/300S,6
+421,Aspen,6
+44,Cirrus,6
+41,Concorde,6
+35,Conquest,6
+9,Cordoba,6
+55,Crossfire,6
+50,Executive,6
+15,Laser,6
+16,LeBaron,6
+17,LeBaron GTS/GTC,6
+42,LHS,6
+10,New Yorker (thru 78)/ Newport/5th Avenue/Imperial (1979-83) (excludes all FWD),6
+14,New Yorker/E-Class/Imperial/ Fifth Avenue,6
+398,Other (automobile),6
+498,Other (light truck),6
+443,Pacifica,6
+54,Pacifica,6
+53,"Prowler (2002 on)  (1997,1999-01 see Plymouth)",6
+52,PT Cruiser,6
+43,Sebring,6
+21,SRT Viper,6
+31,TC (Maserati Sport),6
+441,Town and Country,6
+399,Unknown (automobile),6
+999,Unknown (CHRYSLER),6
+499,Unknown (light truck),6
+442,Voyager (2000 - 2003; 1984-00 see Plymouth. For 2020 on see 06-444.),6
+444,Voyager (2020 on. For 2000-2003 see vehicle make 06-442. For 1984-2000 see Plymouth.),6

@@ -1,13 +1,13 @@
-id,modelname,make
-701,0 - 50 cc,
-31,304,
-32,403,
-33,404,
-36,405,
-34,504/505,
-702,51-124cc,
-35,604,
-398,Other (automobile),
-399,Unknown (automobile),
-999,Unknown (PEUGEOT),
-709,Unknown cc,
+id,modelname,makeID
+701,0 - 50 cc,44
+31,304,44
+32,403,44
+33,404,44
+36,405,44
+34,504/505,44
+702,51-124cc,44
+35,604,44
+398,Other (automobile),44
+399,Unknown (automobile),44
+999,Unknown (PEUGEOT),44
+709,Unknown cc,44

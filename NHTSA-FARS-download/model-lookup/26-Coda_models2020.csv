@@ -1,4 +1,4 @@
-id,modelname,make
-1,Coda,
-398,Other (automobile),
-399,Unknown (automobile),
+id,modelname,makeID
+1,Coda,26
+398,Other (automobile),26
+399,Unknown (automobile),26

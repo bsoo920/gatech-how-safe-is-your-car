@@ -1,8 +1,8 @@
-id,modelname,make
-2,Checker,
-398,Other (automobile),
-3,Panoz,
-4,Saleen,
-1,Studabaker/Avanti,
-5,Tesla,
-399,Unknown (automobile),
+id,modelname,makeID
+2,Checker,29
+398,Other (automobile),29
+3,Panoz,29
+4,Saleen,29
+1,Studabaker/Avanti,29
+5,Tesla,29
+399,Unknown (automobile),29

@@ -4,3 +4,5 @@ NHTSA.csv
 .idea/
 NHTSA-FARS-download/*.zip
 *dropme*
+*-checkpoint.ipynb
+__pycache__/*

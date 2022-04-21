@@ -1,15 +1,15 @@
-id,modelname,make
-981,Bus**: Conventional (Engine out front),
-982,"Bus: Front engine, Flat front",
-983,"Bus: Rear engine, Flat front",
-881,Medium/Heavy – CBE,
-890,Medium/Heavy – COE entry position unknown,
-883,Medium/Heavy – COE high entry,
-882,Medium/Heavy – COE low entry,
-884,Medium/Heavy – Unknown engine location,
-850,Motor Home,
-988,Other (bus),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-989,Unknown (bus),
-999,Unknown (FWD),
+id,modelname,makeID
+981,Bus**: Conventional (Engine out front),83
+982,"Bus: Front engine, Flat front",83
+983,"Bus: Rear engine, Flat front",83
+881,Medium/Heavy – CBE,83
+890,Medium/Heavy – COE entry position unknown,83
+883,Medium/Heavy – COE high entry,83
+882,Medium/Heavy – COE low entry,83
+884,Medium/Heavy – Unknown engine location,83
+850,Motor Home,83
+988,Other (bus),83
+898,Other (medium/heavy truck),83
+998,Other (vehicle),83
+989,Unknown (bus),83
+999,Unknown (FWD),83

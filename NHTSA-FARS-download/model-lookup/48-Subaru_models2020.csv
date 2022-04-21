@@ -1,24 +1,24 @@
-id,modelname,make
-33,360,
-421,Ascent,
-402,B9 Tribeca,
-44,Baja,
-43,Brat,
-46,BRZ,
-401,Forester,
-38,Impreza,
-36,Justy,
-34,Legacy/Outback(prior to 2003 only; see 045 for 2003 on),
-31,Loyale (1990 on)/DL/ FE/G/GF/GL/GLF/STD,
-398,Other (automobile),
-498,Other (light truck),
-45,Outback (2003 on)(see 034 for prior to 2003),
-39,RX,
-32,Star,
-37,SVX,
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown (SUBARU),
-47,WRX (2015 on; see 038 for prior to 2015.),
-35,XT/XT6,
-403,XV Crosstrek,
+id,modelname,makeID
+33,360,48
+421,Ascent,48
+402,B9 Tribeca,48
+44,Baja,48
+43,Brat,48
+46,BRZ,48
+401,Forester,48
+38,Impreza,48
+36,Justy,48
+34,Legacy/Outback(prior to 2003 only; see 045 for 2003 on),48
+31,Loyale (1990 on)/DL/ FE/G/GF/GL/GLF/STD,48
+398,Other (automobile),48
+498,Other (light truck),48
+45,Outback (2003 on)(see 034 for prior to 2003),48
+39,RX,48
+32,Star,48
+37,SVX,48
+399,Unknown (automobile),48
+499,Unknown (light truck),48
+999,Unknown (SUBARU),48
+47,WRX (2015 on; see 038 for prior to 2015.),48
+35,XT/XT6,48
+403,XV Crosstrek,48

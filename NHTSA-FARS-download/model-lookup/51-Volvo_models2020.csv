@@ -1,44 +1,44 @@
-id,modelname,make
-31,122,
-32,140/142/144/145 *,
-33,164,
-36,1800,
-34,240 series*/DL/GL/GLT,
-35,260 series/GLE,
-46,40 Series,
-47,60 Series,
-43,"70 Series (For XC70 for 2014 on, use model code 402)",
-39,740,
-38,760/780,
-45,80 Series,
-42,850,
-44,90 Series,
-40,940,
-41,960,
-983,"Bus : Rear engine, Flat front",
-981,Bus**: Conventional (Engine out front),
-49,C30,
-883,Medium/Heavy - COE high entry,
-882,Medium/Heavy - COE low entry,
-881,Medium/Heavy – CBE,
-890,Medium/Heavy – COE entry position unknown,
-884,Medium/Heavy – Unknown engine location,
-398,Other (automobile),
-988,Other (bus),
-498,Other (light truck),
-898,Other (medium/heavy truck),
-998,Other (Vehicle),
-37,PV544,
-53,S90,
-399,Unknown (automobile),
-989,Unknown (bus),
-499,Unknown (light truck),
-999,Unknown (VOLVO),
-48,V50,
-51,V60,
-52,V90,
-403,XC40,
-50,"XC60 (For 2008-2018 only.  For model years 2019 on, see 51-404.)",
-404,"XC60 (For 2019 on.  For model years 2008-2018, see 51-050.)",
-402,"XC70 (For 2014 on.  For prior to 2013, use model code 043)",
-401,XC90,
+id,modelname,makeID
+31,122,51
+32,140/142/144/145 *,51
+33,164,51
+36,1800,51
+34,240 series*/DL/GL/GLT,51
+35,260 series/GLE,51
+46,40 Series,51
+47,60 Series,51
+43,"70 Series (For XC70 for 2014 on, use model code 402)",51
+39,740,51
+38,760/780,51
+45,80 Series,51
+42,850,51
+44,90 Series,51
+40,940,51
+41,960,51
+983,"Bus : Rear engine, Flat front",51
+981,Bus**: Conventional (Engine out front),51
+49,C30,51
+883,Medium/Heavy - COE high entry,51
+882,Medium/Heavy - COE low entry,51
+881,Medium/Heavy – CBE,51
+890,Medium/Heavy – COE entry position unknown,51
+884,Medium/Heavy – Unknown engine location,51
+398,Other (automobile),51
+988,Other (bus),51
+498,Other (light truck),51
+898,Other (medium/heavy truck),51
+998,Other (Vehicle),51
+37,PV544,51
+53,S90,51
+399,Unknown (automobile),51
+989,Unknown (bus),51
+499,Unknown (light truck),51
+999,Unknown (VOLVO),51
+48,V50,51
+51,V60,51
+52,V90,51
+403,XC40,51
+50,"XC60 (For 2008-2018 only.  For model years 2019 on, see 51-404.)",51
+404,"XC60 (For 2019 on.  For model years 2008-2018, see 51-050.)",51
+402,"XC70 (For 2014 on.  For prior to 2013, use model code 043)",51
+401,XC90,51

@@ -1,46 +1,46 @@
-id,modelname,make
-401,4-Runner,
-56,86,
-43,Avalon,
-405,C-HR,
-40,Camry,
-37,Carina,
-33,Celica,
-32,Corolla,
-31,Corona,
-35,Cressida,
-36,Crown,
-45,ECHO,
-404,FJ Cruiser,
-57,GR Supra,
-403,Highlander,
-421,Land Cruiser,
-47,Matrix,
-441,Minivan (1984-90)/ Previa (1991 on),
-55,Mirai,
-41,MR-2/MR Spyder,
-398,Other (automobile),
-498,Other (light truck),
-42,Paseo,
-471,Pickup,
-46,Prius *,
-402,RAV4 *,
-54,Scion iQ (2010-2011 only.  See Scion for 2012 on.),
-50,Scion tC (2005-2011 only.  See Scion for 2012 on.),
-48,Scion xA,
-49,Scion xB (2004-2011 only.  See Scion for 2012 on.),
-52,Scion xD (2007-2011 only.  See Scion for 2012 on.),
-422,Sequoia,
-442,Sienna,
-44,Solara,
-39,Starlet,
-34,Supra,
-481,T-100,
-472,Tacoma,
-38,Tercel,
-482,Tundra,
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown (TOYOTA),
-53,Venza,
-51,Yaris,
+id,modelname,makeID
+401,4-Runner,49
+56,86,49
+43,Avalon,49
+405,C-HR,49
+40,Camry,49
+37,Carina,49
+33,Celica,49
+32,Corolla,49
+31,Corona,49
+35,Cressida,49
+36,Crown,49
+45,ECHO,49
+404,FJ Cruiser,49
+57,GR Supra,49
+403,Highlander,49
+421,Land Cruiser,49
+47,Matrix,49
+441,Minivan (1984-90)/ Previa (1991 on),49
+55,Mirai,49
+41,MR-2/MR Spyder,49
+398,Other (automobile),49
+498,Other (light truck),49
+42,Paseo,49
+471,Pickup,49
+46,Prius *,49
+402,RAV4 *,49
+54,Scion iQ (2010-2011 only.  See Scion for 2012 on.),49
+50,Scion tC (2005-2011 only.  See Scion for 2012 on.),49
+48,Scion xA,49
+49,Scion xB (2004-2011 only.  See Scion for 2012 on.),49
+52,Scion xD (2007-2011 only.  See Scion for 2012 on.),49
+422,Sequoia,49
+442,Sienna,49
+44,Solara,49
+39,Starlet,49
+34,Supra,49
+481,T-100,49
+472,Tacoma,49
+38,Tercel,49
+482,Tundra,49
+399,Unknown (automobile),49
+499,Unknown (light truck),49
+999,Unknown (TOYOTA),49
+53,Venza,49
+51,Yaris,49

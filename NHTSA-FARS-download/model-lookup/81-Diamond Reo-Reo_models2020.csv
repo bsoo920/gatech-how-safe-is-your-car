@@ -1,15 +1,15 @@
-id,modelname,make
-981,Bus**: Conventional (Engine out front),
-982,"Bus: Front engine, Flat front",
-983,"Bus: Rear engine, Flat front",
-881,Medium/Heavy - CBE,
-890,Medium/Heavy – COE entry position unknown,
-883,Medium/Heavy – COE high entry,
-882,Medium/Heavy – COE low entry,
-884,Medium/Heavy – Unknown engine location,
-850,Motor Home,
-988,Other (bus),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-989,Unknown (bus),
-999,Unknown (DIAMOND REO or REO),
+id,modelname,makeID
+981,Bus**: Conventional (Engine out front),81
+982,"Bus: Front engine, Flat front",81
+983,"Bus: Rear engine, Flat front",81
+881,Medium/Heavy - CBE,81
+890,Medium/Heavy – COE entry position unknown,81
+883,Medium/Heavy – COE high entry,81
+882,Medium/Heavy – COE low entry,81
+884,Medium/Heavy – Unknown engine location,81
+850,Motor Home,81
+988,Other (bus),81
+898,Other (medium/heavy truck),81
+998,Other (vehicle),81
+989,Unknown (bus),81
+999,Unknown (DIAMOND REO or REO),81

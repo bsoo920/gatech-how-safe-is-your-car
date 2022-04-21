@@ -1,6 +1,6 @@
-id,modelname,make
-31,Beta Sedan – HPE,
-398,Other (automobile),
-33,Scorpion,
-399,Unknown (automobile),
-32,Zagato,
+id,modelname,makeID
+31,Beta Sedan – HPE,40
+398,Other (automobile),40
+33,Scorpion,40
+399,Unknown (automobile),40
+32,Zagato,40

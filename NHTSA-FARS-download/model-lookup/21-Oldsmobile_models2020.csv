@@ -1,21 +1,21 @@
-id,modelname,make
-21,Achieva/Alero,
-22,Aurora,
-401,Bravada,
-18,Calais,
-17,Ciera,
-6,Commercial Series,
-20,Cutlass (FWD),
-1,Cutlass (RWD-only),
-2,Delta 88/LSS,
-16,Firenza,
-23,Intrigue,
-3,Ninety-Eight/Regency,
-15,Omega,
-398,Other (automobile),
-441,Silhouette,
-12,Starfire,
-5,Toronado,
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown (OLDSMOBILE),
+id,modelname,makeID
+21,Achieva/Alero,21
+22,Aurora,21
+401,Bravada,21
+18,Calais,21
+17,Ciera,21
+6,Commercial Series,21
+20,Cutlass (FWD),21
+1,Cutlass (RWD-only),21
+2,Delta 88/LSS,21
+16,Firenza,21
+23,Intrigue,21
+3,Ninety-Eight/Regency,21
+15,Omega,21
+398,Other (automobile),21
+441,Silhouette,21
+12,Starfire,21
+5,Toronado,21
+399,Unknown (automobile),21
+499,Unknown (light truck),21
+999,Unknown (OLDSMOBILE),21

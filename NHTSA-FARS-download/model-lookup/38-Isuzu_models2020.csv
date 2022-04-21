@@ -1,31 +1,31 @@
-id,modelname,make
-403,Amigo,
-421,Ascender,
-405,Axiom,
-981,Bus**: Conventional (Engine out front),
-982,"Bus: Front engine, Flat front",
-983,Bus: Rear engine Flat front,
-472,Hombre,
-473,i-280/i-290,
-474,i-350/i-370,
-31,I-Mark,
-32,Impulse,
-881,Medium/Heavy – CBE,
-890,Medium/Heavy – COE entry position unknown,
-883,"Medium/Heavy – COE, high entry",
-882,"Medium/Heavy – COE, low entry",
-884,Medium/Heavy – Unknown engine location,
-441,Oasis,
-398,Other (automobile),
-988,Other (bus),
-498,Other (light truck),
-898,Other (medium/heavy truck),
-471,P'up (pickup),
-402,Rodeo/ Rodeo Sport,
-33,Stylus,
-401,Trooper/Trooper II,
-399,Unknown (automobile),
-989,Unknown (bus),
-999,Unknown (ISUZU),
-499,Unknown (light truck),
-404,VehiCROSS,
+id,modelname,makeID
+403,Amigo,38
+421,Ascender,38
+405,Axiom,38
+981,Bus**: Conventional (Engine out front),38
+982,"Bus: Front engine, Flat front",38
+983,Bus: Rear engine Flat front,38
+472,Hombre,38
+473,i-280/i-290,38
+474,i-350/i-370,38
+31,I-Mark,38
+32,Impulse,38
+881,Medium/Heavy – CBE,38
+890,Medium/Heavy – COE entry position unknown,38
+883,"Medium/Heavy – COE, high entry",38
+882,"Medium/Heavy – COE, low entry",38
+884,Medium/Heavy – Unknown engine location,38
+441,Oasis,38
+398,Other (automobile),38
+988,Other (bus),38
+498,Other (light truck),38
+898,Other (medium/heavy truck),38
+471,P'up (pickup),38
+402,Rodeo/ Rodeo Sport,38
+33,Stylus,38
+401,Trooper/Trooper II,38
+399,Unknown (automobile),38
+989,Unknown (bus),38
+999,Unknown (ISUZU),38
+499,Unknown (light truck),38
+404,VehiCROSS,38

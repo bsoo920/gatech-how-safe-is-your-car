@@ -1,22 +1,22 @@
-id,modelname,make
-31,124 (Coupe/Sedan),
-39,124 Spider,
-32,124 Spider/Racer,
-35,128,
-38,500/500c,
-401,500L,
-402,500X,
-34,850 (Coupe/Spider),
-33,Brava/131,
-890,Medium/Heavy – COE entry position unknown,
-883,Medium/Heavy – COE high entry,
-882,Medium/Heavy – COE low entry,
-398,Other (automobile),
-498,Other (light truck),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-37,Strada,
-399,Unknown (automobile),
-999,Unknown (FIAT),
-499,Unknown (light truck),
-36,X-1/9,
+id,modelname,makeID
+31,124 (Coupe/Sedan),36
+39,124 Spider,36
+32,124 Spider/Racer,36
+35,128,36
+38,500/500c,36
+401,500L,36
+402,500X,36
+34,850 (Coupe/Spider),36
+33,Brava/131,36
+890,Medium/Heavy – COE entry position unknown,36
+883,Medium/Heavy – COE high entry,36
+882,Medium/Heavy – COE low entry,36
+398,Other (automobile),36
+498,Other (light truck),36
+898,Other (medium/heavy truck),36
+998,Other (vehicle),36
+37,Strada,36
+399,Unknown (automobile),36
+999,Unknown (FIAT),36
+499,Unknown (light truck),36
+36,X-1/9,36

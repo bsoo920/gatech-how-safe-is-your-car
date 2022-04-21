@@ -1,8 +1,8 @@
-id,modelname,make
-981,Bus**: Conventional (Engine out front),
-982,"Bus: Front engine, Flat front",
-983,"Bus: Rear engine, Flat front",
-988,Other (bus),
-989,Unknown (bus),
-999,Unknown(THOMAS BUILT),
-461,Van Based,
+id,modelname,makeID
+981,Bus**: Conventional (Engine out front),94
+982,"Bus: Front engine, Flat front",94
+983,"Bus: Rear engine, Flat front",94
+988,Other (bus),94
+989,Unknown (bus),94
+999,Unknown(THOMAS BUILT),94
+461,Van Based,94

@@ -1,15 +1,15 @@
-id,modelname,make
-981,Bus**: Conventional (Engine out front),
-982,"Bus: Front engine, Flat front",
-983,"Bus: Rear engine, Flat front",
-881,Medium/Heavy - CBE,
-890,Medium/Heavy – COE entry position unknown,
-883,Medium/Heavy – COE high entry,
-882,Medium/Heavy – COE low entry,
-884,Medium/Heavy – Unknown engine location,
-850,Motor Home,
-988,Other (bus),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-989,Unknown (bus),
-999,Unknown (PETERBILT),
+id,modelname,makeID
+981,Bus**: Conventional (Engine out front),87
+982,"Bus: Front engine, Flat front",87
+983,"Bus: Rear engine, Flat front",87
+881,Medium/Heavy - CBE,87
+890,Medium/Heavy – COE entry position unknown,87
+883,Medium/Heavy – COE high entry,87
+882,Medium/Heavy – COE low entry,87
+884,Medium/Heavy – Unknown engine location,87
+850,Motor Home,87
+988,Other (bus),87
+898,Other (medium/heavy truck),87
+998,Other (vehicle),87
+989,Unknown (bus),87
+999,Unknown (PETERBILT),87

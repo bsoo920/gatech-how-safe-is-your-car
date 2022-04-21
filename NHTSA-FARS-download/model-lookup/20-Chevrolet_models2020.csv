@@ -1,78 +1,78 @@
-id,modelname,make
-407,AMER,
-441,Astro Van,
-482,Avalanche,
-39,Aveo/Aveo 5,
-19,Beretta/Corsica,
-40,Bolt,
-981,Bus**: Conventional (Engine out front),
-481,"C, K, R, V-series pickup/Silverado",
-9,Camaro,
-27,Caprice PPV,
-405,Captiva,
-16,Cavalier,
-17,Celebrity,
-1,"Chevelle/Malibu Classic, Councours, Laguna**, S-3, Greenbriar, Estate, 300,SS-396/454, Deluxe",
-13,Chevette,
-15,Citation,
-445,City Express,
-22,Cobalt,
-473,Colorado,
-6,Corvair,
-4,Corvette,
-25,Cruze,
-7,El Camino,
-404,Equinox,
-421,Fullsize Blazer/Tahoe,
-461,G-series van,
-34,Geo Metro/Metro,
-35,Geo Storm,
-402,Geo Tracker/Tracker,
-23,HHR,
-2,"Impala/Caprice (For SS from 2014 on, use 20-021.)",
-20,Lumina,
-442,Lumina APV,
-472,LUV,
-37,Malibu/Malibu Maxx,
-881,Medium/Heavy – CBE,
-890,Medium/Heavy – COE entry position unknown,
-883,Medium/Heavy – COE high entry,
-882,Medium/Heavy – COE low entry,
-884,Medium/Heavy –Unknown engine location,
-880,"Medium/Heavy Pickup (pickup-style only – over 10,000 lbs)",
-870,Medium/Heavy Van-Based Vehicle,
-36,Monte Carlo (1995 on),
-10,Monte Carlo (thru '88),
-12,Monza,
-850,Motor Home,
-8,Nova (-'79),
-32,Nova/Geo Prizm/Prism,
-398,Other (automobile),
-988,Other (bus),
-498,Other (light truck),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-466,P-series van,
-401,"S-10 Blazer/TrailBlazer (2002 only; for 2003 on, see 403)",
-471,S-10/T-10 Pickup,
-28,Sonic,
-29,Spark,
-31,Spectrum,
-33,Sprint/Geo Sprint,
-21,SS (For 2014 on.  For Impala/Caprice SS use model 20-002.),
-38,SSR,
-431,Suburban (from 1950-2003;see 422 for 2004 on),
-422,Suburban (from 2004 on; see 431 for 1950-2003),
-403,"TrailBlazer (2003 on; for 2002 model, see 401)",
-24,Traverse (2009-2012 only.  For 2013 on see model 423.),
-423,Traverse (2013 on.  For 2009-2012 see model 024.),
-406,Trax,
-399,Unknown (automobile),
-989,Unknown (bus),
-999,Unknown (CHEVROLET),
-499,Unknown (light truck),
-444,Uplander,
-470,Van derivative,
-11,Vega,
-443,Venture,
-26,Volt,
+id,modelname,makeID
+407,AMER,20
+441,Astro Van,20
+482,Avalanche,20
+39,Aveo/Aveo 5,20
+19,Beretta/Corsica,20
+40,Bolt,20
+981,Bus**: Conventional (Engine out front),20
+481,"C, K, R, V-series pickup/Silverado",20
+9,Camaro,20
+27,Caprice PPV,20
+405,Captiva,20
+16,Cavalier,20
+17,Celebrity,20
+1,"Chevelle/Malibu Classic, Councours, Laguna**, S-3, Greenbriar, Estate, 300,SS-396/454, Deluxe",20
+13,Chevette,20
+15,Citation,20
+445,City Express,20
+22,Cobalt,20
+473,Colorado,20
+6,Corvair,20
+4,Corvette,20
+25,Cruze,20
+7,El Camino,20
+404,Equinox,20
+421,Fullsize Blazer/Tahoe,20
+461,G-series van,20
+34,Geo Metro/Metro,20
+35,Geo Storm,20
+402,Geo Tracker/Tracker,20
+23,HHR,20
+2,"Impala/Caprice (For SS from 2014 on, use 20-021.)",20
+20,Lumina,20
+442,Lumina APV,20
+472,LUV,20
+37,Malibu/Malibu Maxx,20
+881,Medium/Heavy – CBE,20
+890,Medium/Heavy – COE entry position unknown,20
+883,Medium/Heavy – COE high entry,20
+882,Medium/Heavy – COE low entry,20
+884,Medium/Heavy –Unknown engine location,20
+880,"Medium/Heavy Pickup (pickup-style only – over 10,000 lbs)",20
+870,Medium/Heavy Van-Based Vehicle,20
+36,Monte Carlo (1995 on),20
+10,Monte Carlo (thru '88),20
+12,Monza,20
+850,Motor Home,20
+8,Nova (-'79),20
+32,Nova/Geo Prizm/Prism,20
+398,Other (automobile),20
+988,Other (bus),20
+498,Other (light truck),20
+898,Other (medium/heavy truck),20
+998,Other (vehicle),20
+466,P-series van,20
+401,"S-10 Blazer/TrailBlazer (2002 only; for 2003 on, see 403)",20
+471,S-10/T-10 Pickup,20
+28,Sonic,20
+29,Spark,20
+31,Spectrum,20
+33,Sprint/Geo Sprint,20
+21,SS (For 2014 on.  For Impala/Caprice SS use model 20-002.),20
+38,SSR,20
+431,Suburban (from 1950-2003;see 422 for 2004 on),20
+422,Suburban (from 2004 on; see 431 for 1950-2003),20
+403,"TrailBlazer (2003 on; for 2002 model, see 401)",20
+24,Traverse (2009-2012 only.  For 2013 on see model 423.),20
+423,Traverse (2013 on.  For 2009-2012 see model 024.),20
+406,Trax,20
+399,Unknown (automobile),20
+989,Unknown (bus),20
+999,Unknown (CHEVROLET),20
+499,Unknown (light truck),20
+444,Uplander,20
+470,Van derivative,20
+11,Vega,20
+443,Venture,20
+26,Volt,20

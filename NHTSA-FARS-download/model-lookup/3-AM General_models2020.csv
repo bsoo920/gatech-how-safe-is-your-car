@@ -1,18 +1,18 @@
-id,modelname,make
-983,"Bus: Rear engine, Flat front",
-401,Dispatcher,
-466,Dispatcher,
-402,Hummer,
-482,Hummer,
-431,Hummer (2004 on; see model 421 for 1993-2003),
-481,Hummer (Pickup) (for SUV see model 421 for 1993-2003; see 431 for 2004 on),
-421,"Hummer (SUV from 1993-2003; see 431 for 2004 on) (for Pickup, see model 481)",
-884,Medium/Heavy Truck,
-441,MV-1,
-498,Other (light truck),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-988,Other(bus),
-999,Unknown (AM GENERAL),
-499,Unknown (light truck),
-989,Unknown Bus Type,
+id,modelname,makeID
+983,"Bus: Rear engine, Flat front",3
+401,Dispatcher,3
+466,Dispatcher,3
+402,Hummer,3
+482,Hummer,3
+431,Hummer (2004 on; see model 421 for 1993-2003),3
+481,Hummer (Pickup) (for SUV see model 421 for 1993-2003; see 431 for 2004 on),3
+421,"Hummer (SUV from 1993-2003; see 431 for 2004 on) (for Pickup, see model 481)",3
+884,Medium/Heavy Truck,3
+441,MV-1,3
+498,Other (light truck),3
+898,Other (medium/heavy truck),3
+998,Other (vehicle),3
+988,Other(bus),3
+999,Unknown (AM GENERAL),3
+499,Unknown (light truck),3
+989,Unknown Bus Type,3

@@ -1,5 +1,5 @@
-id,modelname,make
-704,350-449cc,
-705,450-749cc,
-706,750cc or greater,
-709,Unknown cc,
+id,modelname,makeID
+704,350-449cc,75
+705,450-749cc,75
+706,750cc or greater,75
+709,Unknown cc,75

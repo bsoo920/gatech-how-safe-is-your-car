@@ -1,20 +1,20 @@
-id,modelname,make
-981,Bus**: Conventional (Engine out front),
-982,"Bus: Front engine, Flat front",
-983,"Bus: Rear engine, Flat front",
-870,Medium Heavy Van-Based Vehicle,
-881,Medium/Heavy - CBE,
-890,Medium/Heavy – COE entry position unknown,
-883,Medium/Heavy – COE high entry,
-882,Medium/Heavy – COE low entry,
-884,Medium/Heavy – Unknown engine location,
-850,Motor Home,
-462,MT 35 Chassis,
-988,Other (bus),
-498,Other (light truck),
-898,Other (medium/heavy truck),
-998,Other (vehicle),
-461,Sprinter/Advantage,
-989,Unknown (bus),
-999,Unknown (FREIGHTLINER),
-499,Unknown (light truck),
+id,modelname,makeID
+981,Bus**: Conventional (Engine out front),82
+982,"Bus: Front engine, Flat front",82
+983,"Bus: Rear engine, Flat front",82
+870,Medium Heavy Van-Based Vehicle,82
+881,Medium/Heavy - CBE,82
+890,Medium/Heavy – COE entry position unknown,82
+883,Medium/Heavy – COE high entry,82
+882,Medium/Heavy – COE low entry,82
+884,Medium/Heavy – Unknown engine location,82
+850,Motor Home,82
+462,MT 35 Chassis,82
+988,Other (bus),82
+498,Other (light truck),82
+898,Other (medium/heavy truck),82
+998,Other (vehicle),82
+461,Sprinter/Advantage,82
+989,Unknown (bus),82
+999,Unknown (FREIGHTLINER),82
+499,Unknown (light truck),82

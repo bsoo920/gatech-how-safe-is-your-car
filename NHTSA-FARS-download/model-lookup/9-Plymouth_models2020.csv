@@ -1,33 +1,33 @@
-id,modelname,make
-19,Acclaim,
-32,Arrow,
-471,Arrow pickup (foreign),
-5,Barracuda,
-38,Breeze,
-7,Caravelle,
-34,Champ/Colt import (includes 2WD Vista),
-35,Conquest,
-31,Cricket,
-3,Fury (Fury Gran thru '78),
-4,Gran Fury ('80 on),
-8,Horizon/Turismo,
-37,Laser,
-20,"Neon (2002 and on, see Dodge)",
-398,Other (automobile),
-498,Other (light truck),
-998,Other (vehicle),
-39,"Prowler (2002 and on, see Chrysler)",
-11,Reliant (K),
-33,Sapporo,
-2,Satellite/Belvedere,
-13,Scamp-(car-based p/u),
-17,Sundance,
-421,Trailduster,
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown (PLYMOUTH),
-1,Valiant/Scamp/Duster (thru 1976),
-461,Van-fullsize (B-series),
-441,Vista Van,
-6,Volare',
-442,"Voyager (minivan) (2001 and on, see Chrysler)",
+id,modelname,makeID
+19,Acclaim,9
+32,Arrow,9
+471,Arrow pickup (foreign),9
+5,Barracuda,9
+38,Breeze,9
+7,Caravelle,9
+34,Champ/Colt import (includes 2WD Vista),9
+35,Conquest,9
+31,Cricket,9
+3,Fury (Fury Gran thru '78),9
+4,Gran Fury ('80 on),9
+8,Horizon/Turismo,9
+37,Laser,9
+20,"Neon (2002 and on, see Dodge)",9
+398,Other (automobile),9
+498,Other (light truck),9
+998,Other (vehicle),9
+39,"Prowler (2002 and on, see Chrysler)",9
+11,Reliant (K),9
+33,Sapporo,9
+2,Satellite/Belvedere,9
+13,Scamp-(car-based p/u),9
+17,Sundance,9
+421,Trailduster,9
+399,Unknown (automobile),9
+499,Unknown (light truck),9
+999,Unknown (PLYMOUTH),9
+1,Valiant/Scamp/Duster (thru 1976),9
+461,Van-fullsize (B-series),9
+441,Vista Van,9
+6,Volare',9
+442,"Voyager (minivan) (2001 and on, see Chrysler)",9

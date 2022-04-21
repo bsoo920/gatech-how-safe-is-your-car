@@ -1,15 +1,15 @@
-id,modelname,make
-983,"Bus: Flat front, rear engine",
-401,LLV,
-883,Medium/Heavy - COE high entry,
-882,Medium/Heavy - COE low entry,
-884,Medium/Heavy - engine location unknown,
-890,Medium/Heavy - entry position unknown,
-881,Medium/Heavy – CBE,
-988,Other (bus),
-498,Other (light truck),
-898,Other (Medium/Heavy truck),
-441,Step-in van,
-989,Unknown (bus),
-999,Unknown (GRUMMAN/ GRUMMAN-OLSON),
-499,Unknown (light truck),
+id,modelname,makeID
+983,"Bus: Flat front, rear engine",25
+401,LLV,25
+883,Medium/Heavy - COE high entry,25
+882,Medium/Heavy - COE low entry,25
+884,Medium/Heavy - engine location unknown,25
+890,Medium/Heavy - entry position unknown,25
+881,Medium/Heavy – CBE,25
+988,Other (bus),25
+498,Other (light truck),25
+898,Other (Medium/Heavy truck),25
+441,Step-in van,25
+989,Unknown (bus),25
+999,Unknown (GRUMMAN/ GRUMMAN-OLSON),25
+499,Unknown (light truck),25

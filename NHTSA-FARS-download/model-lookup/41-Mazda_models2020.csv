@@ -1,38 +1,38 @@
-id,modelname,make
-42,1800,
-35,323/GLC/ Protégé/ Protégé5,
-41,616/618,
-37,626,
-38,808,
-43,929,
-36,Cosmo,
-56,CX-3,
-53,CX-7,
-54,CX-9 (2007-12 only.For 2013 on see model 421.),
-421,CX-9 (2013 on. See model 054 for 2007-12 model years.),
-403,CX5,
-55,Mazda2,
-51,Mazda3,
-52,Mazda5,
-50,Mazda6,
-45,Miata/MX-5,
-47,Millenia,
-39,Mizer,
-48,MP3,
-441,MPV,
-46,MX-3,
-44,MX-6,
-401,Navajo,
-398,Other (automobile),
-498,Other (light truck),
-471,Pickup/ B-Series Pickup,
-40,R-100,
-49,RX-8,
-31,RX2,
-32,RX3,
-33,RX4,
-34,RX7,
-402,Tribute,
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown (MAZDA),
+id,modelname,makeID
+42,1800,41
+35,323/GLC/ Protégé/ Protégé5,41
+41,616/618,41
+37,626,41
+38,808,41
+43,929,41
+36,Cosmo,41
+56,CX-3,41
+53,CX-7,41
+54,CX-9 (2007-12 only.For 2013 on see model 421.),41
+421,CX-9 (2013 on. See model 054 for 2007-12 model years.),41
+403,CX5,41
+55,Mazda2,41
+51,Mazda3,41
+52,Mazda5,41
+50,Mazda6,41
+45,Miata/MX-5,41
+47,Millenia,41
+39,Mizer,41
+48,MP3,41
+441,MPV,41
+46,MX-3,41
+44,MX-6,41
+401,Navajo,41
+398,Other (automobile),41
+498,Other (light truck),41
+471,Pickup/ B-Series Pickup,41
+40,R-100,41
+49,RX-8,41
+31,RX2,41
+32,RX3,41
+33,RX4,41
+34,RX7,41
+402,Tribute,41
+399,Unknown (automobile),41
+499,Unknown (light truck),41
+999,Unknown (MAZDA),41

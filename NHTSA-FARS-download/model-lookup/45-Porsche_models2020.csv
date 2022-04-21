@@ -1,23 +1,23 @@
-id,modelname,make
-44,718,
-31,911/996,
-32,912,
-33,914,
-43,918,
-34,924,
-35,928,
-36,930,
-37,944,
-38,959,
-39,968,
-40,986/Boxster,
-421,Cayenne,
-41,Cayman,
-401,Macan,
-398,Other (automobile),
-498,Other (light truck),
-42,Panamera,
-45,Taycan,
-399,Unknown (automobile),
-499,Unknown (light truck),
-999,Unknown(PORSCHE),
+id,modelname,makeID
+44,718,45
+31,911/996,45
+32,912,45
+33,914,45
+43,918,45
+34,924,45
+35,928,45
+36,930,45
+37,944,45
+38,959,45
+39,968,45
+40,986/Boxster,45
+421,Cayenne,45
+41,Cayman,45
+401,Macan,45
+398,Other (automobile),45
+498,Other (light truck),45
+42,Panamera,45
+45,Taycan,45
+399,Unknown (automobile),45
+499,Unknown (light truck),45
+999,Unknown(PORSCHE),45
