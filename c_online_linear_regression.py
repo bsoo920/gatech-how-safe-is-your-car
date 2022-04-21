@@ -5,6 +5,15 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from b_offline_data_processing import aggregate
 
+##-----Set up Server-----##
+from flask import Flask, request, jsonify, make_response
+from flask_cors import CORS
+app = Flask(__name__)
+CORS(app)
+year_input = 0
+make_input = ""
+model_input = ""
+
 def getData(verbose=False):
     # get master aggregate
     dfMasterCrashAgg = pd.read_pickle('program_data/master_crash_aggregate.pkl')
@@ -15,10 +24,9 @@ def getData(verbose=False):
     if verbose:
 	    print(dfMasterCrashAgg[:5])
 	    print(dfSales[:5])
-
-    return dfMasterCrashAgg, dfSales
-
-
+    
+    return dfMasterCrashAgg, dfSales    
+    
 def reaggregate( dfCrashAgg, groupBy=None):
     # If groupBy==None, then further aggregation is done, i.e. use agg level of dfCrashAgg.
     # Otherwise groupBy should be list of columns, e.g. ['MOD_YEAR', 'Make_ID', 'ACC_YEAR']
@@ -280,10 +288,72 @@ def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, d
     ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
     ax.legend()
     plt.show()
+
+
+@app.route("/getValues")
+def getValues():
+    year_input = request.values.get("year", None)
+    make_input = request.values.get("make_ID", None)
+    model_input = request.values.get("model_ID", None)
+
+    year_val = year_input
+    make_val = make_input
+    model_val = model_input
+
+    if (year_input == "None"):
+        year_val = None;
+    if (make_input == "None"):
+        make_val = None;
+    if(model_input == "None"):
+        model_val = None;
+
+    regress_String = ""
+    ## Return value
+    response = {"fatality": -1};
+
+    dfMasterCrashAgg, dfSales = getData() ##get data
+
+    print("Values:", year_input, make_input, model_input, "being used");
+    usedYear, sales = lookupSales(dfSales, Sales_Year=year_val, Make_ID=make_val, Model_ID=model_val, verbose=False)
+    print("Successfully executed:", usedYear, sales);
+
+    group = ["MOD_YEAR", "Make_ID", "Model_ID", "ACC_YEAR"];
+
+    if(year_input == "None"):
+        group.remove("MOD_YEAR");
+    if(make_input == "None"):
+        group.remove("Make_ID");
+    if(model_input == "None"):
+        group.remove("Model_ID");
+
+    if (year_input == "None") or (make_input == "None") or (model_input == "None"):
+        dfMasterCrashAgg = reaggregate(dfMasterCrashAgg, groupBy=group);
+        
+    for i in range(0, len(group)):
+        if group[i] != "ACC_YEAR":
+            if group[i] == "MOD_YEAR":
+                regress_String = regress_String + group[i] + "=="
+                regress_String = regress_String + year_input + " "
+            if group[i] == "Make_ID":
+                regress_String = regress_String + group[i] + "=="
+                regress_String = regress_String + make_input + " "
+            if group[i] == "Model_ID":
+                regress_String = regress_String + group[i] + "=="
+                regress_String = regress_String + model_input + " "
+        if i < len(group)-2:    
+            regress_String = regress_String + "and "
+                
+    print(regress_String);
+    _,_, fatality = linear_regress(dfMasterCrashAgg, make_input, regress_String, denom=sales, showPlot=False);
+    response["fatality"] = np.ceil(fatality)
+    print("Normalized annual fatality rate of ", fatality);
+    return response
     
 
 if __name__ == '__main__':
-    
+    app.run()
+
+'''    
     dfMasterCrashAgg, dfSales = getData(verbose=True)
 
     # test lookupSales
@@ -328,7 +398,7 @@ if __name__ == '__main__':
     summarize_by_modelyear( dfMasterCrashAgg, modelYrStart, modelYrEnd, models_dict=x)
     # with normalization
     summarize_by_modelyear( dfMasterCrashAgg, modelYrStart, modelYrEnd, models_dict=x, dfSales=dfSales)
-
+'''
 
     
 
