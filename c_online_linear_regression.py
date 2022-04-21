@@ -127,6 +127,7 @@ def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True)
             ax.yaxis.set_label_text('annual fatality' + permillion)
 
             plt.show()        
+            print(k)
             print(f'Slope {slope} intercept {intercept}')
             print(f'Initial fatality rate is {initFatality} per year')
     
@@ -204,7 +205,8 @@ def summarize_by_makeyear( dfCrashAgg, modelYrStart, modelYrEnd, makes_dict, dfS
     plt.show()
 
 
-def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, dfSales=pd.DataFrame()): 
+def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, dfSales=pd.DataFrame()
+                          , showLinearRegress=False): 
     # if dfSales is provided, it'll be used for normalization
     
     series={}
@@ -233,7 +235,7 @@ def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, d
                     , name            = f'{modelYear} {modelName} {salesTitle}'
                     , filterCondition = f'MOD_YEAR=={modelYear} and ACC_YEAR>=MOD_YEAR and '+condition
                     , denom           = sales
-                    , showPlot        = (modelYear>=modelYrStart)
+                    , showPlot        = showLinearRegress
                     )
 
                 if initFatality != None:
@@ -244,8 +246,16 @@ def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, d
 
     fig, ax = plt.subplots()
 
+    i=0
     for modelName,data in series.items():
-        ax.plot(data[0], data[1], label=modelName)
+        if i<=10:
+            fmt='solid'
+        elif i<=20:
+            fmt='dashed'
+        else:
+            fmt='dashdot'
+
+        ax.plot(data[0], data[1], linestyle=fmt, label=modelName)
     
     if not dfSales.empty:
         permillion = ' per million cars'
