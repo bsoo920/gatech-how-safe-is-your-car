@@ -241,7 +241,7 @@ def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, d
                 sales = None
                 salesTitle = ''
             
-            if dfSales.empty or sales!=None:
+            if dfSales.empty or (sales!=None and sales>0):
                 _,_, initFatality = linear_regress(
                       dfCrashAgg      = dfCrashAgg
                     , name            = f'{modelYear} {modelName} {salesTitle}'
@@ -268,6 +268,7 @@ def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, d
             fmt='dashdot'
 
         ax.plot(data[0], data[1], linestyle=fmt, label=modelName)
+        i+=1
     
     if not dfSales.empty:
         permillion = ' per million cars'
