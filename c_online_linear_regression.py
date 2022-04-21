@@ -36,7 +36,7 @@ def reaggregate( dfCrashAgg, groupBy=None):
 # 610      Acura        MDX       421       54        2006  54121
 # 1217     Acura        MDX       421       54        2007  58606
 
-def lookupSales(dfSales, Sales_Year, Make_ID, Model_ID, verbose=False ):
+def lookupSales(dfSales, Sales_Year=None, Make_ID=None, Model_ID=None, verbose=False ):
     '''
     Get closest Sales_Year sales.
     E.g. if 2000 is requested, 2005 sales is returned since that's the earliest sales data available.
@@ -61,13 +61,28 @@ def lookupSales(dfSales, Sales_Year, Make_ID, Model_ID, verbose=False ):
         year, sales = None, None
     
     else:
-        if Model_ID == None:
+        if Sales_Year == None:
+            df = df.groupby(['Make_ID','Model_ID']) \
+                    .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
+                    .reset_index()
+            
+            year, sales = None, df.Sales.tolist()[0]
+
+        elif Model_ID == None:
             df = df.groupby(['Make_ID','Sales_Year']) \
                     .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
                     .reset_index()
 
-        
-        year, sales = df.Sales_Year.tolist()[0], df.Sales.tolist()[0]
+            year, sales = df.Sales_Year.tolist()[0], df.Sales.tolist()[0]
+
+        elif Make_ID == None:
+            df = df.groupby(['Model_ID','Sales_Year']) \
+                    .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
+                    .reset_index()
+
+            year, sales = df.Sales_Year.tolist()[0], df.Sales.tolist()[0]
+        else:
+            year, sales = None, None
 
                 
     if verbose:
@@ -290,7 +305,9 @@ if __name__ == '__main__':
     linear_regress(dfCrashAggByMake,'toyota' , "MOD_YEAR==1999 and Make_ID==49 ")  
     # with sales volume normalization
     year, sales = lookupSales(dfSales, Sales_Year=1999, Make_ID=49, Model_ID=None, verbose=True) #camry
-    linear_regress(dfCrashAggByMake,'toyota' , "MOD_YEAR==1999 and Make_ID==49 ", denom=sales)  
+    print('Year & sales used are', year,',', sales)
+    _,_, fatality = linear_regress(dfCrashAggByMake,'toyota' , "MOD_YEAR==1999 and Make_ID==49 ", denom=sales)     
+    print('fatality is ', fatality) 
 
     # test summarize_by_makeyear (manufacturer)
     x = {}

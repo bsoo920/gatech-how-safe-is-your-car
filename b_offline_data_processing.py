@@ -28,7 +28,7 @@ def readCrashData(accYearStart, accYearEnd, nrows=None):
 
 
 def aggregate(dfCrash, filterCondition='MOD_YEAR>=1999', groupBy=['MOD_YEAR', 'Make_ID', 'Model_ID','ACC_YEAR']):
-    print('filtering by',filterCondition, ', aggregating by',groupBy)
+    # print('filtering by',filterCondition, ', aggregating by',groupBy)
 
     dfCrashAgg = dfCrash.query(filterCondition).groupby(groupBy) \
         .agg(fatalities=pd.NamedAgg(column='fatalities', aggfunc=sum)) \
