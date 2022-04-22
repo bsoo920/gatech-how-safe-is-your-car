@@ -161,6 +161,10 @@ def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True)
             print(f'Slope {slope} intercept {intercept}')
             print(f'Initial fatality rate is {initFatality} per year')
         else:
+            # FROM: 2012 Acura (All Models) (2012 sales of 156216 vehicles)
+            # TO  : 2012 Acura (All Models)
+            name = name[:name.rfind('(')-1]
+
             if platform.system() == "Windows":
                 plt.savefig("graphs\\" + name + ".png", bbox_inches="tight", dpi=70)
             elif platform.system() == "Darwin" or platform.system() == "Linux":
@@ -364,7 +368,12 @@ def getValues():
 
     regress_String = regress_String + "ACC_YEAR>=MOD_YEAR";
     print(regress_String);
-    _,_, fatality = linear_regress(dfMasterCrashAgg, year_name + " " + make_name + " " + model_name, regress_String, denom=sales, showPlot=False);
+    # _,_, fatality = linear_regress(dfMasterCrashAgg, year_name + " " + make_name + " " + model_name, regress_String, denom=sales, showPlot=False);
+
+    _,_, fatality = linear_regress(dfMasterCrashAgg
+        , f'{year_name} {make_name} {model_name} ({usedYear} sales of {sales} vehicles)'
+        , regress_String, denom=sales, showPlot=False);
+
     response["fatality"] = np.ceil(fatality)
     print("Normalized annual fatality rate of ", fatality);
     return response
