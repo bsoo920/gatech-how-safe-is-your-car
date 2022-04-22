@@ -134,22 +134,23 @@ def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True)
     # print linear regression on top of scatter plot (if slope != None)
     if  slope != None:   
         initFatality = slope * yearOne + intercept
-        
-        if showPlot:
             
-            fig,ax = plt.subplots()
-            ax.scatter(x_years,y_fatal)
-            ax.set_title(k)
+        fig,ax = plt.subplots()
+        ax.scatter(x_years,y_fatal)
+        ax.set_title(k)
             
-            ax.plot(x_years, y_cal2, 'r') 
-            ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
-            ax.xaxis.set_label_text('accident year')
-            ax.yaxis.set_label_text('annual fatality' + permillion)
+        ax.plot(x_years, y_cal2, 'r') 
+        ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
+        ax.xaxis.set_label_text('accident year')
+        ax.yaxis.set_label_text('annual fatality' + permillion)
 
+        if showPlot:
             plt.show()        
             print(k)
             print(f'Slope {slope} intercept {intercept}')
             print(f'Initial fatality rate is {initFatality} per year')
+        else:
+            plt.savefig(name+".png", bbox_inches="tight")
     
     return slope, intercept, initFatality
 
@@ -294,8 +295,10 @@ def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, d
 def getValues():
     year_input = request.values.get("year", None)
     make_input = request.values.get("make_ID", None)
+    make_name = request.values.get("make_name", None)
     model_input = request.values.get("model_ID", None)
-
+    model_name = request.values.get("model_name", None)
+    
     year_val = year_input
     make_val = make_input
     model_val = model_input
@@ -344,7 +347,7 @@ def getValues():
             regress_String = regress_String + "and "
                 
     print(regress_String);
-    _,_, fatality = linear_regress(dfMasterCrashAgg, make_input, regress_String, denom=sales, showPlot=False);
+    _,_, fatality = linear_regress(dfMasterCrashAgg, year + " " + make_name + " " + model_name, regress_String, denom=sales, showPlot=False);
     response["fatality"] = np.ceil(fatality)
     print("Normalized annual fatality rate of ", fatality);
     return response
