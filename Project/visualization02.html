@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <!-- add title -->
+    
+    <!-- import required libraries here -->
+    <script type="text/javascript" src="lib/d3.v5.min.js"></script>
+    <script type="text/javascript" src="lib/d3-dsv.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <style>
+	select {
+		width: 160px;
+	}
+	
+	option {
+		width: 160px;
+	}
+	#plus_div {
+		width: 40px;
+		height: 40px;
+		background: white;	
+	}
+	table.table02 th{
+		padding: 5px;
+		text-allign: left;
+		border: solid 1px;
+	}
+	table.table02 td{
+		padding: 5px;
+		text-allign: left;
+	}
+	.clickable, .trash{
+		cursor: pointer;
+	}
+	#reset_div{
+		width: 40px;
+		height: 40px;
+		background: white;
+	}
+	#visualize_div{
+		width: 150px;
+		height: 40px;
+		background: lightblue;
+		border: 1px solid black;
+	}
+	/*#line_chart{
+		background: lightblue;
+	}*/
+
+    </style>
+    <title>Visualization 01</title>
+    <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- Create dropdown menus -->
+    <table class="table01" id="dropdowns">
+	<tr>
+		<td>
+    <label for="Car Year">
+	Year:<br>
+	<select id="yearDropdown"></select>
+	</label></td>
+		<td>	</td>
+		<td>	</td>
+		<td>	</td>
+		<td>
+    <label for="Make">
+	Make:<br>
+	<select id="makeDropdown"></select>
+	</label></td>
+		<td>	</td>
+		<td>	</td>
+		<td>	</td>
+		<td>
+    <label for="Model">
+	Model:<br>
+	<select id="modelDropdown"></select>
+	</label></td>
+		<td>	</td>
+		<td>	</td>
+		<td>	</td>
+		<td>
+	<div id="plus_div">
+		</div></td>
+		<td>
+	<div id="reset_div">
+		</div></td>
+		<td>
+	<!--div id="visualize_div"-->
+		<!--/div--></td>
+		</td>
+		<td>
+	<p id="fatality"></p>
+	</tr>
+    </table><br>
+
+    <div width= "960px" id="entry_table_div">
+    <table class="table02" id="entryTable">
+	<thead>
+		<tr>
+			<th width="100px" class="clickable" id="year" style="background-color:lightcyan">Car Year  &#9661;</th>
+
+			<th width="100px" class="clickable" id="make" style="background-color:lightcyan">Make  &#9661;</th>
+
+			<th width="100px" class="clickable" id="model" style="background-color:lightcyan">Model  &#9661;</th>
+
+			<th width="250px" class="clickable" id="fpmm" style="background-color:lightcyan">Fatalities per Million Cars  &#9661;</th>
+			
+			<td></td><td></td>
+			<th width="27px" class="trash" id="delete_all" style="background-color:white"><i class="fa fa-trash-o"></i></th>		
+		</tr>
+	</thead>
+    </table>
+    </div>
+
+    <script>
+    
+        // enter code to define margin and dimensions for svg
+	var margin = {top: 20, right: 40, bottom: 20, left: 30},
+	    width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+	
+	// variables for table columns
+	var clicks = {year: 0, make: 0, model: 0, fpmm: 0};
+
+	// -----Create Plus Button----- //
+	var svg = d3.select("#plus_div")
+		    .append("svg")
+		    .attr("id", "button_svg")
+		    .attr("width", "40px")
+		    .attr("height", "40px")
+		    .attr("transform", "translate(0,0)")
+		    .on("mouseover", function(d){
+					d3.select(this)
+					  .style("opacity", 0.7);})
+		    .on("mouseout", function(d){
+					d3.select(this)
+					  .style("opacity", 1);});
+
+	svg.append("circle")
+	   .attr("id", "plusButton")
+	   .style("fill", "lightblue")
+	   .attr("r", 20)
+	   .attr("cx", 20)
+	   .attr("cy", 20);
+
+	svg.append("text")
+	   .text("\u002B")
+	   .attr("font-size", "45px")
+	   .attr("fill", "royalblue")
+	   .attr("x", 20)
+	   .attr("y", 35)
+	   .attr("text-anchor", "middle")
+	   .attr("font-weight", "bold");
+
+        // -----Create Reset All Button----- //
+	var svg02 = d3.select("#reset_div")
+		      .append("svg")
+		      .attr("id", "reset_svg")
+		      .attr("width", "40px")
+		      .attr("height", "40px")
+		      .attr("transform", "translate(0,0)")
+		      .on("mouseover", function(d){
+					  d3.select(this)
+					    .style("opacity", 0.7);})
+		      .on("mouseout", function(d){
+					 d3.select(this)
+					   .style("opacity", 1);});
+
+	svg02.append("circle")
+	     .attr("id", "resetButton")
+	     .style("fill", "lightblue")
+	     .attr("r", 20)
+	     .attr("cx", 20)
+	     .attr("cy", 20);
+
+	svg02.append("text")
+	     .text("\u27F3")
+	     .attr("font-size", "30px")
+	     .attr("fill", "royalblue")
+	     .attr("x", 21)
+	     .attr("y", 31)
+	     .attr("text-anchor", "middle")
+	     .attr("font-weight", "bold");
+
+	// -----Create Visualize Chart Button----- //
+	/*var svg03 = d3.select("#visualize_div")
+		      .append("svg")
+		      .attr("id", "visualize_svg")
+		      .attr("width", "150px")
+		      .attr("height", "40px")
+		      .attr("transform", "translate(0,0)")
+		      .on("mouseover", viz_mouseover())
+		      .on("mouseout", viz_mouseout());
+
+	svg03.append("text")
+	     .text("Visualize Chart \u1F4C9")
+	     .attr("fill", "black")
+	     .attr("font-size", "10px")
+	     .attr("font-weight", "bold")
+	     .attr("y", "30px");
+
+	// -----SVG for Line Chart----- //
+	var svg04 = d3.select("body")
+		      .append("svg")
+		      .attr("id", "line_chart")
+		      .attr("width", "250px")
+		      .attr("height", "250px");
+		      //.attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
+	*/
+	// get selected values of all dropdown menus
+	var dd_values = {year: "All", make: "All", model: "All"};
+
+        // define data variable 
+	var vehicleData = d3.csv("car_sales_ID_NoOther.csv");
+
+	// fatality variable
+	var fatality = -1;
+
+	Promise.all([
+		//enter code to read files
+		vehicleData
+	]).then(
+		//enter code to call ready() with required arguments
+		values => {ready(values[0]);}
+		
+	);
+
+        function ready(vehicleData) {
+		
+	    // -----Year Drop Down Menu----- //
+            // enter code to extract all unique Years from vehicleData 
+		var years = [];
+		for (var i = 1999; i <= 2020; i++){
+			years.push(i);
+		}
+
+	    // Default "All" selection 
+		var year_default = document.createElement("option");
+		year_default.text = "All";
+		year_default.value = "All";
+
+		var year_select = document.getElementById("yearDropdown");
+		year_select.appendChild(year_default);
+
+            // append vehicle options to Year dropdown
+		for (y in years){
+			var option = document.createElement("option");
+			    option.text = years[y];
+			    option.value = years[y];
+			year_select.appendChild(option);
+		};
+            
+            // Get current selected
+		var year_selected = document.getElementById("yearDropdown");
+		var make_selected = document.getElementById("makeDropdown");
+		var model_selected = document.getElementById("modelDropdown");
+
+		document.getElementById("yearDropdown").onchange = function(){
+				if (make_selected.selectedIndex != 0){
+					dd_values["make"] = document.getElementById("makeDropdown").value;
+				}
+				//make_selected.selectedIndex = 0;
+				model_selected.selectedIndex = 0;
+				clearOptions(model_selected);
+	
+				dd_values["year"] = year_selected.value;
+				getModel(dd_values["make"], vehicleData, dd_values["year"]);
+			}
+		 
+
+	   // -----Make Drop Down Menu----- //
+	   // default "All" selection
+		var make_default = document.createElement("option");
+		make_default.text = "All";
+		make_default.value = "All";
+		var make_select = document.getElementById("makeDropdown");
+		make_select.appendChild(make_default);
+
+	   // default have all Make options since default for year is "All"
+		var makes = new Set();
+		    
+		for (i in vehicleData){
+			if(vehicleData[i].Make_Name != undefined){
+				makes.add(vehicleData[i].Make_Name); //add makes from Make column
+			};
+		};
+
+	    // convert makes set to an array
+		makes = Array.from(makes);
+		makes = makes.sort();
+
+            // append vehicle options to Year dropdown
+		for (m in makes){
+			var option = document.createElement("option");
+			    option.text = makes[m];
+			    option.value = makes[m];
+			make_select.appendChild(option);
+		};
+
+		var make_selected = document.getElementById("makeDropdown");
+		var year_selected = document.getElementById("yearDropdown");
+		document.getElementById("makeDropdown").onchange = function(){
+			dd_values["make"] = make_selected.value;
+			dd_values["year"] = year_selected.value;
+			getModel(dd_values["make"], vehicleData, dd_values["year"]);
+		}
+
+	   // -----Model Drop Down Menu----- //
+				    
+	   // default "All" selection
+		var model_default = document.createElement("option");
+		model_default.text = "All";
+		model_default.value = "All";
+		var model_select = document.getElementById("modelDropdown");
+		model_select.appendChild(model_default);
+
+	   // -----Get Entry After Plus Button Click----- //
+		svg.on("click", function(){	
+			var table_ref = document.getElementById("entryTable");
+			table_ref.appendChild(document.createElement("tbody"));
+			var table_body = document.getElementById("entryTable").getElementsByTagName("tbody")[0];
+			var newRow = table_body.insertRow(table_body.rows.length);
+			
+			dd_values["year"] = year_selected.value;
+			dd_values["make"] = make_selected.value;
+			dd_values["model"] = model_selected.value;
+
+			if(dd_values["year"] == "All"){
+				dd_values["year"] = "(All Years)";
+			}
+			if(dd_values["make"] == "All"){
+				dd_values["make"] = "(All Makes)";
+			}
+			if(dd_values["model"] == "All"){
+				dd_values["model"] = "(All Models)";
+			}
+
+			// Create bar chart with year, make, model
+			var bar = createBar(vehicleData, dd_values["year"], dd_values["make"], dd_values["model"]);
+			
+			newRow.innerHTML = "<td>" + dd_values["year"] + "</td><td>" + dd_values["make"] 
+					   + "</td><td>" + dd_values["model"] + "</td><td>" 
+					   + bar + "</td><td></td><td></td><td>" + 
+					   "<button onClick='deleteEntry()' <i class='fa fa-trash-o'></i> </button>" 
+				           + "</td><td></td><td>Visualize Graph</td>";
+			
+			dd_values["year"] = year_selected.value;
+			// change header to regular and default all clicks
+			const table = document.getElementById("entryTable"); //get table
+			const headers = table.querySelectorAll("th"); //get all sortable headers
+
+			// loop headers and add clickable event
+			[].forEach.call(headers, function (header) {
+				clicks = {year: 0, make: 0, model: 0, fpmm: 0};
+				if(header.id == "year"){
+					header.innerText = "Car Year  \u25BD";
+				}
+				if(header.id == "make"){
+					header.innerText = "Make  \u25BD";
+				}
+				if(header.id == "model"){
+					header.innerText = "Model  \u25BD";
+				}
+				if(header.id == "fpmm"){
+					header.innerText = "Fatalities per Million Cars  \u25BD";
+				}
+			
+			});		
+		})
+
+           // -----Reset All Button----- //
+		svg02.on("click", function(){
+				year_selected.selectedIndex = 0;
+				make_selected.selectedIndex = 0;
+				model_selected.selectedIndex = 0;
+				clearOptions(model_selected);
+	
+				dd_values = {year: "All", make: "All", model: "All"};
+			});
+
+	   // -----Delete All----- //
+		var del_all = document.getElementById("delete_all");
+		del_all.addEventListener("click", function(){
+						var table = document.getElementById("entryTable"),
+						    headers = table.querySelectorAll("th"); //get all sortable headers
+
+						for(var i = table.rows.length-1; i > 0; i--){
+							table.deleteRow(i);
+						}
+
+						// change header to regular and default all clicks
+						// loop headers and add clickable event
+						[].forEach.call(headers, function (header) {
+							clicks = {year: 0, make: 0, model: 0,fpmm: 0};
+							if(header.id == "year"){
+								header.innerText = "Car Year  \u25BD";
+							}
+							if(header.id == "make"){
+								header.innerText = "Make  \u25BD";
+							}
+							if(header.id == "model"){
+								header.innerText = "Model  \u25BD";
+							}
+
+							if(header.id == "fpmm"){
+								header.innerText = "Fatalities per Million Cars  \u25BD";
+							}
+			
+						});
+					});
+
+           // -----Sort Columns----- //
+		const table = document.getElementById("entryTable"); //get table
+		const headers = table.querySelectorAll("th"); //get all sortable headers
+		
+		var filled = {year: 0, make: 0, model: 0, fpmm: 0};
+		// loop headers and add clickable event
+		[].forEach.call(headers, function (header, index) {
+			header.addEventListener("click", function(){
+				clicks[header.id]++;
+				filled[header.id]++;
+
+				// change triangle symbol accordingly
+				// descending with down triangle and ascending with up triangle
+				if(clicks[header.id] % 2 == 0){
+					if(header.id == "year"){
+						header.innerText = "Car Year  \u25BC";
+					}
+					if(header.id == "make"){
+						header.innerText = "Make  \u25BC";
+					}
+					if(header.id == "model"){
+						header.innerText = "Model  \u25BC";
+					}
+					if(header.id == "fpmm"){
+						header.innerText = "Fatalities per Million Cars  \u25BC";
+					}
+				}else{
+					if(header.id == "year"){
+						header.innerText = "Car Year  \u25B2";
+					}
+					if(header.id == "make"){
+						header.innerText = "Make  \u25B2";
+					}
+					if(header.id == "model"){
+						header.innerText = "Model  \u25B2";
+					}
+					if(header.id == "fpmm"){
+						header.innerText = "Fatalities per Million Cars  \u25B2";
+					}
+				}
+				sortColumn(index, table, header.id);
+				
+				// test for header click and change triangle symbol accordingly
+				// if one header is sorted, the rest will not be sorted
+				if(filled[header.id] == 1){
+					if(header.id == "year"){
+						[].forEach.call(headers, function(h){
+							if(h.id == "make"){
+								h.innerText = "Make  \u25BD";
+							}
+							if(h.id == "model"){
+								h.innerText = "Model  \u25BD";
+							}
+							if(h.id == "fpmm"){
+								h.innerText = "Fatalities per Million Cars  \u25BD";
+							}
+						});
+						clicks["make"] = 0;
+						clicks["model"] = 0;
+						clicks["fpmm"] = 0;
+					}
+					if(header.id == "make"){
+						[].forEach.call(headers, function(h){
+							if(h.id == "year"){
+								h.innerText = "Car Year  \u25BD";
+							}
+							if(h.id == "model"){
+								h.innerText = "Model  \u25BD";
+							}
+							if(h.id == "fpmm"){
+								h.innerText = "Fatalities per Million Cars  \u25BD";
+							}
+						});
+						clicks["year"] = 0;
+						clicks["model"] = 0;
+						clicks["fpmm"] = 0;
+					}
+					if(header.id == "model"){
+						[].forEach.call(headers, function(h){
+							if(h.id == "year"){
+								h.innerText = "Car Year  \u25BD";
+							}
+							if(h.id == "make"){
+								h.innerText = "Make  \u25BD";
+							}
+							if(h.id == "fpmm"){
+								h.innerText = "Fatalities per Million Cars  \u25BD";
+							}
+						});
+						clicks["year"] = 0;
+						clicks["make"] = 0;
+						clicks["fpmm"] = 0;
+					}
+					if(header.id == "fpmm"){
+						[].forEach.call(headers, function(h){
+							if(h.id == "year"){
+								h.innerText = "Car Year  \u25BD";
+							}
+							if(h.id == "make"){
+								h.innerText = "Make  \u25BD";
+							}
+							if(h.id == "model"){
+								h.innerText = "Model  \u25BD";
+							}
+						});
+						clicks["year"] = 0;
+						clicks["make"] = 0;
+						clicks["model"] = 0;
+					}
+					filled = {year: 0, make: 0, model: 0, fpmm:0}
+				}
+			});
+		});		
+		 
+        }
+
+	// -----Get All Unique Make Names from Data----- //
+	function getMake(vehicleData){
+	    // -----Make Drop Down Menu----- //
+		var curMake = document.getElementById("makeDropdown").value;
+            // enter code to extract all unique Make from vehicleData 
+		var makes = new Set();
+		for (i in vehicleData){
+			if(vehicleData[i].Make_Name != undefined){
+				makes.add(vehicleData[i].Make_Name); //add make names from Make column
+				
+			};
+		};
+
+	    // convert models set to an array
+		makes = Array.from(makes);
+		makes = makes.sort();
+
+	   var make_select = document.getElementById("makeDropdown");
+	    // remove all options first
+	       clearOptions(make_select);
+
+            // append vehicle Make options to Make dropdown
+		if(makes.length > 0){
+			for (m in makes){
+				var option = document.createElement("option");
+			    	option.text = makes[m];
+			    	option.value = makes[m];
+				make_select.appendChild(option);
+			};
+		};
+            
+	    //Leave option as previous if in given year
+		var make_selected = document.getElementById("makeDropdown");
+
+	    	if (makes.includes(curMake)){
+			dd_values["make"] = curMake;
+			make_selected.selectedIndex = makes.indexOf(curMake)+1; //Add 1 cuz 0 = "All"
+	    	}
+            // Get current selected
+		document.getElementById("makeDropdown").onchange = function(){
+			dd_values["make"] = make_selected.value;
+			
+			getModel(dd_values["make"], vehicleData); 
+		}
+
+		
+	}
+
+	// -----Get All Unique Model Names from Data----- //
+	function getModel(make, vehicleData){
+	    // -----Model Drop Down Menu----- //
+            // enter code to extract all unique Model from vehicleData 
+		var models = new Set();
+		for (i in vehicleData){
+			if((vehicleData[i].Model_Name != undefined) && (vehicleData[i].Model_ID != -1)){
+				if(make != "All"){
+					if(vehicleData[i].Make_Name == make){
+						models.add(vehicleData[i].Model_Name); //add model names from Model column
+					};
+				};
+			};
+		};
+
+	    // convert models set to an array
+		models = Array.from(models);
+		models = models.sort();
+
+	   var model_select = document.getElementById("modelDropdown");
+	    // remove all options first
+	       clearOptions(model_select);
+
+            // append vehicle Model options to Model dropdown
+		if(models.length > 0){
+			for (m in models){
+				var option = document.createElement("option");
+			    	option.text = models[m];
+			    	option.value = models[m];
+				model_select.appendChild(option);
+			};
+		};
+            
+            // Get current selected
+		var model_selected = document.getElementById("modelDropdown");
+		document.getElementById("modelDropdown").onchange = function(){
+			dd_values["model"] = model_selected.value;
+		}
+
+		
+	}
+
+	// -----Clear All Options in Dropdown to Update Dropdown Options----- //
+	function clearOptions(dropDown){
+		var i, L = dropDown.options.length - 1;
+		for(i = L; i >= 0; i--){
+			if(i != 0){
+			dropDown.remove(i);
+			};
+		};
+	}
+
+	// -----Delete Entry on Trash Button Click----- //
+	function deleteEntry(){
+		var td = event.target.parentNode;
+		var tr = td.parentNode;
+		tr.parentNode.removeChild(tr);
+	}
+
+	// -----Sort Columns in Table on Click----- //
+	function sortColumn(index, table, header) {
+		// get all rows
+		const tableBody = table.querySelector("tbody");
+
+		if(table.rows.length > 1){
+		const rows = tableBody.querySelectorAll("tr");
+	
+		const newRows = Array.from(rows); //clone rows
+		
+		newRows.sort(function (rowA, rowB){
+			var cellA = rowA.querySelectorAll("td")[index].innerHTML;
+			var cellB = rowB.querySelectorAll("td")[index].innerHTML;
+			if (index == 3){
+				cellA = parseInt(cellA.substring(cellA.length-10, cellA.length-6));
+				cellB = parseInt(cellB.substring(cellB.length-10, cellB.length-6));
+			}
+			console.log(cellA)
+			console.log(cellB)
+			if(clicks[header] % 2 == 0){
+				switch (true){
+					case cellA > cellB:
+						return -1;
+					case cellA < cellB:
+						return 1;
+					case cellA === cellB:
+						return 0;
+				}
+			}else{
+				switch (true){
+					case cellA > cellB:
+						return 1;
+					case cellA < cellB:
+						return -1;
+					case cellA === cellB:
+						return 0;
+				}
+			}
+		});
+
+		// remove old rows
+		[].forEach.call(rows, function(row){
+			tableBody.removeChild(row);
+		});
+
+		// append new rows
+		newRows.forEach(function (newRow) {
+			tableBody.appendChild(newRow);
+		});
+		}	
+	};
+
+	// -----Create Fatality Bar Graph----- //
+	function createBar(vehicleData, year, make, model){
+		var make_ID = 0;
+		var model_ID = 0;
+		
+		// get Model and Make IDs
+		if(make != "(All Makes)"){
+			for (i in vehicleData){
+				if(vehicleData[i].Make_Name == make){
+					make_ID = vehicleData[i].Make_ID;
+				}
+			}
+		}
+		else{
+			make_ID = "None";
+		}
+
+		if(model != "(All Models)"){
+			for(i in vehicleData){
+				if(vehicleData[i].Model_Name == model){
+					model_ID = vehicleData[i].Model_ID;
+				}
+			}
+		}
+		else{
+			model_ID = "None";
+		}
+
+		// -----Fatalitities gathered from the python scripts----- //
+		if (year == "(All Years)"){
+			year = "None";
+		}	
+
+		function set_value(x){
+			fatality = x; 
+		}
+
+		$.ajax({
+			url: "http://127.0.0.1:5000/getValues",
+			async: false,
+		      	data: {"year": year, "make_ID": make_ID, "make_name": make, "model_ID": model_ID, "model_name": model},
+		      	success: function (response) {
+				set_value(response["fatality"]);
+			},
+			error: function (jqXHR, status, err) {
+				set_value(status);
+			}
+		});
+
+		if((fatality != -1) && (fatality != "error")){
+			// Format fatality string so it's easier to compare for sorting
+			if (String(fatality).length == 3){
+				fatality = '0' + String(fatality);
+			}
+			else if (String(fatality).length == 2){
+				fatality = '00' + String(fatality);
+			}
+			else if (String(fatality).length == 1){
+				fatality = '000' + String(fatality);
+			}
+
+			return "<svg width='200' height='20' id='barChart'><style> .number {fill:black;}</style><rect width=" 
+				+ parseInt(fatality) + " height='20' style='fill:skyblue'/><text x='5' y='15' class='number'>" 
+				+ parseInt(fatality) + "</text>" + fatality + "</svg>";
+		}
+		else{
+			return "No Data Found";
+		}
+
+	};
+
+	// -----Mouseover Event for Visualize Button----- //
+	function viz_mouseover(){
+
+	};
+
+	// -----Mouseout Event for Visualize Button----- //
+	function viz_mouseout(){
+
+	};
+
+    </script>
+
+</body>
+
+</html>
