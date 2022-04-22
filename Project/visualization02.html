@@ -206,14 +206,14 @@
 		for (var i = 1999; i <= 2020; i++){
 			years.push(i);
 		}
-
+	    
 	    // Default "All" selection 
-		var year_default = document.createElement("option");
-		year_default.text = "All";
-		year_default.value = "All";
+		//var year_default = document.createElement("option");
+		//year_default.text = "All";
+		//year_default.value = "All";
 
 		var year_select = document.getElementById("yearDropdown");
-		year_select.appendChild(year_default);
+		//year_select.appendChild(year_default);
 
             // append vehicle options to Year dropdown
 		for (y in years){
@@ -559,11 +559,15 @@
 	    // -----Model Drop Down Menu----- //
             // enter code to extract all unique Model from vehicleData 
 		var models = new Set();
+		var curID = 0;
 		for (i in vehicleData){
 			if((vehicleData[i].Model_Name != undefined) && (vehicleData[i].Model_ID != -1)){
 				if(make != "All"){
 					if(vehicleData[i].Make_Name == make){
-						models.add(vehicleData[i].Model_Name); //add model names from Model column
+						if (vehicleData[i].Model_ID != curID){
+							curID = vehicleData[i].Model_ID;
+							models.add(vehicleData[i].Model_Name); //add model names from Model column
+						}
 					};
 				};
 			};
