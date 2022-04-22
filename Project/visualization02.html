@@ -98,8 +98,12 @@
 
 			<th width="250px" class="clickable" id="fpmm" style="background-color:lightcyan">Fatalities per Million Cars  &#9661;</th>
 			
+			<td></td>
+			<th width="100px" id="graph" style="background-color:lightcyan">Graph</th>
+	
 			<td></td><td></td>
-			<th width="27px" class="trash" id="delete_all" style="background-color:white"><i class="fa fa-trash-o"></i></th>		
+			<th width="27px" class="trash" id="delete_all" style="background-color:white"><i class="fa fa-trash-o"></i></th>
+					
 		</tr>
 	</thead>
     </table>
@@ -309,15 +313,16 @@
 			if (bar != "No Data Found"){
 				newRow.innerHTML = "<td>" + dd_values["year"] + "</td><td>" + dd_values["make"] 
 					   + "</td><td>" + dd_values["model"] + "</td><td>" 
-					   + bar + "</td><td></td><td></td><td>" + 
-					   "<button onClick='deleteEntry()'> <i class='fa fa-trash-o'></i> </button>" 
-				           + "</td><td></td><td><button onClick='visualizeGraph()'>See Graph</button></td>";
+					   + bar +
+					   "</td><td></td><td><button onClick='visualizeGraph()'>See Graph</button></td>"
+					   + "<td></td><td></td>" +
+					   "<td><button onClick='deleteEntry()'> <i class='fa fa-trash-o'></i> </button></td>";
 			}
 			else{
 				newRow.innerHTML = "<td>" + dd_values["year"] + "</td><td>" + dd_values["make"] 
 					   + "</td><td>" + dd_values["model"] + "</td><td>" 
-					   + bar + "</td><td></td><td></td><td>" + 
-					   "<button onClick='deleteEntry()'> <i class='fa fa-trash-o'></i> </button>";
+					   + bar + "</td><td></td><td></td><td></td><td></td>" + 
+					   "<td><button onClick='deleteEntry()'> <i class='fa fa-trash-o'></i> </button></td>";
 
 			}
 			dd_values["year"] = year_selected.value;
@@ -604,8 +609,18 @@
 	// -----Delete Entry on Trash Button Click----- //
 	function deleteEntry(){
 		var td = event.target.parentNode;
-		var tr = td.parentNode;
+		var tr = td.parentNode.parentNode;	
+		
+		if (tr.nodeName != "TR"){	
+			tr = td.parentNode;
+		}
+
 		tr.parentNode.removeChild(tr);
+
+		var chart = document.getElementById("chart_div");
+
+		chart.innerHTML = "";
+		
 	}
 
 	// -----Sort Columns in Table on Click----- //
@@ -731,28 +746,19 @@
 
 	};
 
-	// -----Mouseover Event for Visualize Button----- //
-	function viz_mouseover(){
-
-	};
-
-	// -----Mouseout Event for Visualize Button----- //
-	function viz_mouseout(){
-
-	};
-
 	// -----Visualize Graph Button----- //
 	function visualizeGraph(){
 		var chart = document.getElementById("chart_div");
-
+		
 		var td = event.target.parentNode;
 		var tr = td.parentNode;
-
+		
 		var year = tr.children[0].innerHTML;
 		var make = tr.children[1].innerHTML;
 		var model = tr.children[2].innerHTML;
-	
+		
 		path = "graphs\\" + year + " " + make + " " + model + ".png";
+		
 		chart.innerHTML = "<img src=\'graphs\\" + year + " " + make + " " + model + ".png\'>";
 	};
 

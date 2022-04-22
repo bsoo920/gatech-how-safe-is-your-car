@@ -28,7 +28,7 @@ def getData(verbose=False):
     return dfMasterCrashAgg, dfSales    
     
 def reaggregate( dfCrashAgg, groupBy=None):
-    # If groupBy==None, then further aggregation is done, i.e. use agg level of dfCrashAgg.
+    # If groupBy==None, then no further aggregation is done, i.e. use agg level of dfCrashAgg.
     # Otherwise groupBy should be list of columns, e.g. ['MOD_YEAR', 'Make_ID', 'ACC_YEAR']
 
     if groupBy != None:
@@ -52,43 +52,49 @@ def lookupSales(dfSales, Sales_Year=None, Make_ID=None, Model_ID=None, verbose=F
     if Model_ID==None, then Make level sales will be returned.
     '''
     
-    condition = []
-    if Sales_Year != None:
-        condition.append(f'Sales_Year>={Sales_Year}')
-    if Make_ID != None:
-        condition.append(f'Make_ID=={Make_ID}')
-    if Model_ID != None:
-        condition.append(f'Model_ID=={Model_ID}')
-    
-    condition = ' and '.join(condition)
-    
+    if Sales_Year==None and Make_ID==None and Model_ID==None:
+        df = dfSales[['Sales']].agg('sum')
+        year, sales =  None, df.tolist()[0]
+
+    else:
+
+        condition = []
+        if Sales_Year != None:
+            condition.append(f'Sales_Year>={Sales_Year}')
+        if Make_ID != None:
+            condition.append(f'Make_ID=={Make_ID}')
+        if Model_ID != None:
+            condition.append(f'Model_ID=={Model_ID}')
         
-    df = dfSales.query(condition)
+        condition = ' and '.join(condition)
+        
+            
+        df = dfSales.query(condition)
 
-    if df.empty:
-        year, sales = None, None
-    
-    elif not (Sales_Year==None and Make_ID==None and Model_ID==None):
-        # further sales aggregation needed
-        grains = ['Make_ID','Model_ID','Sales_Year']
-
-        if Make_ID==None:
-            grains.remove('Make_ID')
-
-        if Model_ID==None:
-            grains.remove('Model_ID')
-
-        if Sales_Year==None:
-            grains.remove('Sales_Year')
-
-        df = df.groupby( grains ) \
-                .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
-                .reset_index()
-
-        if Sales_Year!=None:
-            year, sales = df.Sales_Year.tolist()[0], df.Sales.tolist()[0]
+        if df.empty:
+            year, sales = None, None
+        
         else:
-            year, sales =                      None, df.Sales.tolist()[0]
+            # further sales aggregation needed
+            grains = ['Make_ID','Model_ID','Sales_Year']
+
+            if Make_ID==None:
+                grains.remove('Make_ID')
+
+            if Model_ID==None:
+                grains.remove('Model_ID')
+
+            if Sales_Year==None:
+                grains.remove('Sales_Year')
+
+            df = df.groupby( grains ) \
+                    .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
+                    .reset_index()
+
+            if Sales_Year!=None:
+                year, sales = df.Sales_Year.tolist()[0], df.Sales.tolist()[0]
+            else:
+                year, sales =                      None, df.Sales.tolist()[0]
 
                 
     if verbose:
@@ -100,7 +106,11 @@ def lookupSales(dfSales, Sales_Year=None, Make_ID=None, Model_ID=None, verbose=F
 
 def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True):
     k = name
-    v = dfCrashAgg.query(filterCondition)
+
+    if filterCondition==None:
+        v = dfCrashAgg
+    else:
+        v = dfCrashAgg.query(filterCondition)
     
     if v.empty:
         return None,None,None
@@ -133,7 +143,7 @@ def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True)
 
     # print linear regression on top of scatter plot (if slope != None)
     if  slope != None:   
-        initFatality = slope * yearOne + intercept 
+        initFatality = slope * yearOne + intercept
             
         fig,ax = plt.subplots()
         ax.scatter(x_years,y_fatal)
@@ -150,7 +160,7 @@ def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True)
             print(f'Slope {slope} intercept {intercept}')
             print(f'Initial fatality rate is {initFatality} per year')
         else:
-            plt.savefig("graphs\\" + name+ ".png", bbox_inches="tight", dpi=70)
+            plt.savefig("graphs\\" + name + ".png", bbox_inches="tight", dpi=70)
     
     return slope, intercept, initFatality
 
@@ -323,7 +333,7 @@ def getValues():
     print("Successfully executed:", usedYear, sales);
 
     group = ["MOD_YEAR", "Make_ID", "Model_ID", "ACC_YEAR"];
-
+    print("group:", group);
     if(year_input == "None"):
         group.remove("MOD_YEAR");
     if(make_input == "None"):
@@ -333,7 +343,7 @@ def getValues():
 
     if (year_input == "None") or (make_input == "None") or (model_input == "None"):
         dfMasterCrashAgg = reaggregate(dfMasterCrashAgg, groupBy=group);
-        
+    
     for i in range(0, len(group)):
         if group[i] != "ACC_YEAR":
             if group[i] == "MOD_YEAR":
@@ -345,9 +355,10 @@ def getValues():
             if group[i] == "Model_ID":
                 regress_String = regress_String + group[i] + "=="
                 regress_String = regress_String + model_input + " "
-        if i < len(group)-2:    
+        if i < len(group)-1:    
             regress_String = regress_String + "and "
-                
+
+    regress_String = regress_String + "ACC_YEAR>=MOD_YEAR";
     print(regress_String);
     _,_, fatality = linear_regress(dfMasterCrashAgg, year_name + " " + make_name + " " + model_name, regress_String, denom=sales, showPlot=False);
     response["fatality"] = np.ceil(fatality)
