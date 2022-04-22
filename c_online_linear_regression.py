@@ -223,7 +223,7 @@ def summarize_by_makeyear( dfCrashAgg, modelYrStart, modelYrEnd, makes_dict, dfS
     ax.set_xlabel('Model Year')  # Add an x-label to the axes.
     ax.set_ylabel('Annual Fatalities' + permillion)  # Add a y-label to the axes.
     ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
-    ax.legend()
+    ax.legend(bbox_to_anchor=(1.04,1.04))
     plt.show()
 
 
