@@ -619,7 +619,9 @@
 
 		var chart = document.getElementById("chart_div");
 
-		chart.innerHTML = "";
+		if (chart.innerHTML.includes(tr.children[0].innerHTML + " " + tr.children[1].innerHTML + " " + tr.children[2].innerHTML) == true){
+			chart.innerHTML = "";
+		}
 		
 	}
 
@@ -640,8 +642,7 @@
 				cellA = parseInt(cellA.substring(cellA.length-10, cellA.length-6));
 				cellB = parseInt(cellB.substring(cellB.length-10, cellB.length-6));
 			}
-			console.log(cellA)
-			console.log(cellB)
+			
 			if(clicks[header] % 2 == 0){
 				switch (true){
 					case cellA > cellB:
