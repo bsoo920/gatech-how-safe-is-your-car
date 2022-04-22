@@ -7,42 +7,42 @@ Python http server (or any software capable of hosting a web server)
 
 ## Flask Setup 
 make sure [Flask] (https://flask.palletsprojects.com/en/2.1.x/installation/) is installed inside Scripts folder where Python is located
-Create a project folder and a venv folder inside the project folder 
+1. Create a project folder and a venv folder inside the project folder 
 ```bash
 > mkdir myproject
 > cd myproject
 > py -3 -m venv venv
 ```
-Activate the environment
+2. Activate the environment
 ```bash
 > venv\Scripts\activate
 ```
 your shell prompt will change to show the name of the activated environment
 
-Within the activated environment, install Flask using [pip] (https://pip.pypa.io/en/stable/)
+3. Inside the activated environment, install Flask using [pip] (https://pip.pypa.io/en/stable/)
 ```bash
 $ pip install Flask
 ```
 
 ## Flask CORS Setup 
 make sure [Flask CORS] (https://flask-cors.readthedocs.io/en/latest/) is installed inside Scripts folder where Python is located
-Install the extension using [pip] (https://pip.pypa.io/en/stable/)
+1. Install the extension using [pip] (https://pip.pypa.io/en/stable/)
 ```bash
 $ pip install -U flask-cors
 ```
 
 ## Setting up the web server
-Run a web server with the following command:
+1. Run a web server with the following command:
 ```bash
 python -m -m http.server 8887 &
 ```
 
-Then from the "Project" directory (it should be the parent directory of this file)
+2. Then from the "Project" directory (it should be the parent directory of this file)
 ```bash
 python c_online_linear_regression.py
 ```
 
-Finally go to [this URL] (http://127.0.0.1:8887/visualization02.html) to open the visualization 
+3. Finally go to [this URL] (http://127.0.0.1:8887/visualization02.html) to open the visualization 
 
 # Interacting with the table
 ## Drop downs
