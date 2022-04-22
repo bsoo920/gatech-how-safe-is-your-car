@@ -757,10 +757,18 @@
 		var year = tr.children[0].innerHTML;
 		var make = tr.children[1].innerHTML;
 		var model = tr.children[2].innerHTML;
+
+		var platform = navigator.platform;
+		if (platform.includes("Win")){
+			path = "graphs\\" + year + " " + make + " " + model + ".png";
 		
-		path = "graphs\\" + year + " " + make + " " + model + ".png";
+			chart.innerHTML = "<img src=\'graphs\\" + year + " " + make + " " + model + ".png\'>";
+		}
+		else if ((platform.includes("Mac")) || (platform.includes("Linux"))){
+			path = "graphs/" + year + " " + make + " " + model + ".png";
 		
-		chart.innerHTML = "<img src=\'graphs\\" + year + " " + make + " " + model + ".png\'>";
+			chart.innerHTML = "<img src=\'graphs/" + year + " " + make + " " + model + ".png\'>";
+		}
 	};
 
     </script>
