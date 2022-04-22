@@ -32,15 +32,23 @@ $ pip install -U flask-cors
 ```
 
 ## Setting up the web server
-run "c_online_regression.py" and wait for the server to ready up
-set up a web server and connect it to the "Project" directory (it should be the Parent directory of this file)
-once in the directory browser, click on visualization02.html
+Run a web server with the following command:
+```bash
+python -m -m http.server 8887 &
+```
+
+Then from the "Project" directory (it should be the parent directory of this file)
+```bash
+python c_online_linear_regression.py
+```
+
+Finally go to [this URL] (http://127.0.0.1:8887/visualization02.html) to open the visualization 
 
 # Interacting with the table
 ## Drop downs
-- Dropdown menus provides values to return within the table itself as well as feed it to "c_online_regression.py"
+- Dropdown menus provides values to return within the table itself as well as feed it to "c_online_linear_regression.py"
 - Dropdown options are gathered from "car_sales_ID_NoOther.csv" (in the same directory as this file)
-- Once the plus button (on the right of the dropdown menus) is pressed, values are fed to "c_online_regression.py" to gather the fatality 
+- Once the plus button (on the right of the dropdown menus) is pressed, values are fed to "c_online_linear_regression.py" to gather the fatality 
   rate to create the bar under the "Fatality per Million Cars" column
 - Values chosen within the dropdown menus will also be added to the table under their respective columns 
 - The reset button (on the right of the plus button) will reset all drop down selections to "All" which is the default selection
@@ -54,7 +62,7 @@ once in the directory browser, click on visualization02.html
 	- Clicking the "Trash" header will delete all rows within the table
 		- The graph, if any are displayed, will be deleted upon the deletion of all rows
 - Additional buttons will appear along side each row in the table:
-	- The "See Graph" button, when clicked, display the graph created within "c_online_regression.py" with values from the drop down menus
+	- The "See Graph" button, when clicked, display the graph created within "c_online_linear_regression.py" with values from the drop down menus
 		- The graph is displayed under the table with the appropriate values in the row
 	- The "trash" button next to each row allows for the deletion of each singular row of which it is next to
 		- The graph, if any are displayed, will be deleted upon the deletion of the row
