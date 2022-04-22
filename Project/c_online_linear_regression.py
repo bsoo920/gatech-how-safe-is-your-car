@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import platform 
 from b_offline_data_processing import aggregate
 
 ##-----Set up Server-----##
@@ -160,7 +161,10 @@ def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True)
             print(f'Slope {slope} intercept {intercept}')
             print(f'Initial fatality rate is {initFatality} per year')
         else:
-            plt.savefig("graphs\\" + name + ".png", bbox_inches="tight", dpi=70)
+            if platform.system() == "Windows":
+                plt.savefig("graphs\\" + name + ".png", bbox_inches="tight", dpi=70)
+            elif platform.system() == "Darwin" or platform.system() == "Linux":
+                plt.savefig("graphs/" + name + ".png", bbox_inches="tight", dpi=70)
     
     return slope, intercept, initFatality
 
