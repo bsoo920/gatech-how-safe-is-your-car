@@ -6,8 +6,8 @@ Chrome v92.0 (or higher): browser to display the table visualization
 Python http server (or any software capable of hosting a web server)
 
 ## Flask Setup 
-make sure [Flask] (https://flask.palletsprojects.com/en/2.1.x/installation/) is installed within the Scripts directory where Python is located
-Create a project folder and a venv folder within 
+make sure [Flask] (https://flask.palletsprojects.com/en/2.1.x/installation/) is installed inside Scripts folder where Python is located
+Create a project folder and a venv folder inside the project folder 
 ```bash
 > mkdir myproject
 > cd myproject
@@ -25,7 +25,7 @@ $ pip install Flask
 ```
 
 ## Flask CORS Setup 
-make sure [Flask CORS] (https://flask-cors.readthedocs.io/en/latest/) is installed within the Scripts directory where Python is located
+make sure [Flask CORS] (https://flask-cors.readthedocs.io/en/latest/) is installed inside Scripts folder where Python is located
 Install the extension using [pip] (https://pip.pypa.io/en/stable/)
 ```bash
 $ pip install -U flask-cors
