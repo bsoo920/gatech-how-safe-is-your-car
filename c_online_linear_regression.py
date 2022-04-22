@@ -28,7 +28,7 @@ def getData(verbose=False):
     return dfMasterCrashAgg, dfSales    
     
 def reaggregate( dfCrashAgg, groupBy=None):
-    # If groupBy==None, then further aggregation is done, i.e. use agg level of dfCrashAgg.
+    # If groupBy==None, then no further aggregation is done, i.e. use agg level of dfCrashAgg.
     # Otherwise groupBy should be list of columns, e.g. ['MOD_YEAR', 'Make_ID', 'ACC_YEAR']
 
     if groupBy != None:
@@ -52,43 +52,49 @@ def lookupSales(dfSales, Sales_Year=None, Make_ID=None, Model_ID=None, verbose=F
     if Model_ID==None, then Make level sales will be returned.
     '''
     
-    condition = []
-    if Sales_Year != None:
-        condition.append(f'Sales_Year>={Sales_Year}')
-    if Make_ID != None:
-        condition.append(f'Make_ID=={Make_ID}')
-    if Model_ID != None:
-        condition.append(f'Model_ID=={Model_ID}')
-    
-    condition = ' and '.join(condition)
-    
+    if Sales_Year==None and Make_ID==None and Model_ID==None:
+        df = dfSales[['Sales']].agg('sum')
+        year, sales =  None, df.tolist()[0]
+
+    else:
+
+        condition = []
+        if Sales_Year != None:
+            condition.append(f'Sales_Year>={Sales_Year}')
+        if Make_ID != None:
+            condition.append(f'Make_ID=={Make_ID}')
+        if Model_ID != None:
+            condition.append(f'Model_ID=={Model_ID}')
         
-    df = dfSales.query(condition)
+        condition = ' and '.join(condition)
+        
+            
+        df = dfSales.query(condition)
 
-    if df.empty:
-        year, sales = None, None
-    
-    elif not (Sales_Year==None and Make_ID==None and Model_ID==None):
-        # further sales aggregation needed
-        grains = ['Make_ID','Model_ID','Sales_Year']
-
-        if Make_ID==None:
-            grains.remove('Make_ID')
-
-        if Model_ID==None:
-            grains.remove('Model_ID')
-
-        if Sales_Year==None:
-            grains.remove('Sales_Year')
-
-        df = df.groupby( grains ) \
-                .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
-                .reset_index()
-
-        if Sales_Year!=None:
-            year, sales = df.Sales_Year.tolist()[0], df.Sales.tolist()[0]
+        if df.empty:
+            year, sales = None, None
+        
         else:
-            year, sales =                      None, df.Sales.tolist()[0]
+            # further sales aggregation needed
+            grains = ['Make_ID','Model_ID','Sales_Year']
+
+            if Make_ID==None:
+                grains.remove('Make_ID')
+
+            if Model_ID==None:
+                grains.remove('Model_ID')
+
+            if Sales_Year==None:
+                grains.remove('Sales_Year')
+
+            df = df.groupby( grains ) \
+                    .agg(Sales=pd.NamedAgg(column='Sales', aggfunc=sum)) \
+                    .reset_index()
+
+            if Sales_Year!=None:
+                year, sales = df.Sales_Year.tolist()[0], df.Sales.tolist()[0]
+            else:
+                year, sales =                      None, df.Sales.tolist()[0]
 
                 
     if verbose:
@@ -100,7 +106,11 @@ def lookupSales(dfSales, Sales_Year=None, Make_ID=None, Model_ID=None, verbose=F
 
 def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True):
     k = name
-    v = dfCrashAgg.query(filterCondition)
+
+    if filterCondition==None:
+        v = dfCrashAgg
+    else:
+        v = dfCrashAgg.query(filterCondition)
     
     if v.empty:
         return None,None,None
