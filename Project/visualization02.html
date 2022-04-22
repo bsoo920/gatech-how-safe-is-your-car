@@ -38,15 +38,9 @@
 		height: 40px;
 		background: white;
 	}
-	#visualize_div{
-		width: 150px;
-		height: 40px;
-		background: lightblue;
-		border: 1px solid black;
+	#chart_div{
+		transform: translate(30px,20px);
 	}
-	/*#line_chart{
-		background: lightblue;
-	}*/
 
     </style>
     <title>Visualization 01</title>
@@ -60,8 +54,8 @@
     <table class="table01" id="dropdowns">
 	<tr>
 		<td>
-    <label for="Car Year">
-	Year:<br>
+    <label for="Model Year">
+	Model Year:<br>
 	<select id="yearDropdown"></select>
 	</label></td>
 		<td>	</td>
@@ -89,12 +83,6 @@
 		<td>
 	<div id="reset_div">
 		</div></td>
-		<td>
-	<!--div id="visualize_div"-->
-		<!--/div--></td>
-		</td>
-		<td>
-	<p id="fatality"></p>
 	</tr>
     </table><br>
 
@@ -102,7 +90,7 @@
     <table class="table02" id="entryTable">
 	<thead>
 		<tr>
-			<th width="100px" class="clickable" id="year" style="background-color:lightcyan">Car Year  &#9661;</th>
+			<th width="100px" class="clickable" id="year" style="background-color:lightcyan">Model Year  &#9661;</th>
 
 			<th width="100px" class="clickable" id="make" style="background-color:lightcyan">Make  &#9661;</th>
 
@@ -116,6 +104,7 @@
 	</thead>
     </table>
     </div>
+    <div id="chart_div"></div>
 
     <script>
     
@@ -187,31 +176,6 @@
 	     .attr("text-anchor", "middle")
 	     .attr("font-weight", "bold");
 
-	// -----Create Visualize Chart Button----- //
-	/*var svg03 = d3.select("#visualize_div")
-		      .append("svg")
-		      .attr("id", "visualize_svg")
-		      .attr("width", "150px")
-		      .attr("height", "40px")
-		      .attr("transform", "translate(0,0)")
-		      .on("mouseover", viz_mouseover())
-		      .on("mouseout", viz_mouseout());
-
-	svg03.append("text")
-	     .text("Visualize Chart \u1F4C9")
-	     .attr("fill", "black")
-	     .attr("font-size", "10px")
-	     .attr("font-weight", "bold")
-	     .attr("y", "30px");
-
-	// -----SVG for Line Chart----- //
-	var svg04 = d3.select("body")
-		      .append("svg")
-		      .attr("id", "line_chart")
-		      .attr("width", "250px")
-		      .attr("height", "250px");
-		      //.attr("transform", "translate(" + (margin.left) + "," + (margin.top) + ")");
-	*/
 	// get selected values of all dropdown menus
 	var dd_values = {year: "All", make: "All", model: "All"};
 
@@ -342,13 +306,20 @@
 
 			// Create bar chart with year, make, model
 			var bar = createBar(vehicleData, dd_values["year"], dd_values["make"], dd_values["model"]);
-			
-			newRow.innerHTML = "<td>" + dd_values["year"] + "</td><td>" + dd_values["make"] 
+			if (bar != "No Data Found"){
+				newRow.innerHTML = "<td>" + dd_values["year"] + "</td><td>" + dd_values["make"] 
 					   + "</td><td>" + dd_values["model"] + "</td><td>" 
 					   + bar + "</td><td></td><td></td><td>" + 
-					   "<button onClick='deleteEntry()' <i class='fa fa-trash-o'></i> </button>" 
-				           + "</td><td></td><td>Visualize Graph</td>";
-			
+					   "<button onClick='deleteEntry()'> <i class='fa fa-trash-o'></i> </button>" 
+				           + "</td><td></td><td><button onClick='visualizeGraph()'>See Graph</button></td>";
+			}
+			else{
+				newRow.innerHTML = "<td>" + dd_values["year"] + "</td><td>" + dd_values["make"] 
+					   + "</td><td>" + dd_values["model"] + "</td><td>" 
+					   + bar + "</td><td></td><td></td><td>" + 
+					   "<button onClick='deleteEntry()'> <i class='fa fa-trash-o'></i> </button>";
+
+			}
 			dd_values["year"] = year_selected.value;
 			// change header to regular and default all clicks
 			const table = document.getElementById("entryTable"); //get table
@@ -358,7 +329,7 @@
 			[].forEach.call(headers, function (header) {
 				clicks = {year: 0, make: 0, model: 0, fpmm: 0};
 				if(header.id == "year"){
-					header.innerText = "Car Year  \u25BD";
+					header.innerText = "Model Year  \u25BD";
 				}
 				if(header.id == "make"){
 					header.innerText = "Make  \u25BD";
@@ -398,7 +369,7 @@
 						[].forEach.call(headers, function (header) {
 							clicks = {year: 0, make: 0, model: 0,fpmm: 0};
 							if(header.id == "year"){
-								header.innerText = "Car Year  \u25BD";
+								header.innerText = "Model Year  \u25BD";
 							}
 							if(header.id == "make"){
 								header.innerText = "Make  \u25BD";
@@ -429,7 +400,7 @@
 				// descending with down triangle and ascending with up triangle
 				if(clicks[header.id] % 2 == 0){
 					if(header.id == "year"){
-						header.innerText = "Car Year  \u25BC";
+						header.innerText = "Model Year  \u25BC";
 					}
 					if(header.id == "make"){
 						header.innerText = "Make  \u25BC";
@@ -442,7 +413,7 @@
 					}
 				}else{
 					if(header.id == "year"){
-						header.innerText = "Car Year  \u25B2";
+						header.innerText = "Model Year  \u25B2";
 					}
 					if(header.id == "make"){
 						header.innerText = "Make  \u25B2";
@@ -478,7 +449,7 @@
 					if(header.id == "make"){
 						[].forEach.call(headers, function(h){
 							if(h.id == "year"){
-								h.innerText = "Car Year  \u25BD";
+								h.innerText = "Model Year  \u25BD";
 							}
 							if(h.id == "model"){
 								h.innerText = "Model  \u25BD";
@@ -494,7 +465,7 @@
 					if(header.id == "model"){
 						[].forEach.call(headers, function(h){
 							if(h.id == "year"){
-								h.innerText = "Car Year  \u25BD";
+								h.innerText = "Model Year  \u25BD";
 							}
 							if(h.id == "make"){
 								h.innerText = "Make  \u25BD";
@@ -510,7 +481,7 @@
 					if(header.id == "fpmm"){
 						[].forEach.call(headers, function(h){
 							if(h.id == "year"){
-								h.innerText = "Car Year  \u25BD";
+								h.innerText = "Model Year  \u25BD";
 							}
 							if(h.id == "make"){
 								h.innerText = "Make  \u25BD";
@@ -768,6 +739,21 @@
 	// -----Mouseout Event for Visualize Button----- //
 	function viz_mouseout(){
 
+	};
+
+	// -----Visualize Graph Button----- //
+	function visualizeGraph(){
+		var chart = document.getElementById("chart_div");
+
+		var td = event.target.parentNode;
+		var tr = td.parentNode;
+
+		var year = tr.children[0].innerHTML;
+		var make = tr.children[1].innerHTML;
+		var model = tr.children[2].innerHTML;
+	
+		path = "graphs\\" + year + " " + make + " " + model + ".png";
+		chart.innerHTML = "<img src=\'graphs\\" + year + " " + make + " " + model + ".png\'>";
 	};
 
     </script>
