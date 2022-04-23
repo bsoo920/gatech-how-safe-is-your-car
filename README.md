@@ -30,7 +30,7 @@ All setup steps are done at command line or in Terminal, unless otherwise stated
 2. Manually clean up the data. See history of [`car_sales_ID_NoOther.csv`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/commits/main/car_sales_ID_NoOther.csv).
 
 ### Data Pre-processing
-1. Execute `python b_offline_data_processing.py` which does the following:
+1. Execute [`python b_offline_data_processing.py`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/b_offline_data_processing.py) which does the following:
     1. Reads and aggregates crash data to the M/M/MY level and saves pandas dataframe as a pickle `.pkl` file.
     2. Reads the sales data and transposes it to database table format and saves as `.pkl` file.
 
@@ -38,7 +38,7 @@ All setup steps are done at command line or in Terminal, unless otherwise stated
 ### Analytics GUI
 From root directory of this project:
 1. Start http server by executing `python -m http.server 8887`  (To end session, issue `Ctrl+C`)
-2. Start analytics service by executing `python c_online_linear_regression.py`
+2. Start analytics service by executing `python` [`c_online_linear_regression.py`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/c_online_linear_regression.py)
 3. Go to http://127.0.0.1:8887/visualization02.html in Chrome
 4. Have fun!
 
