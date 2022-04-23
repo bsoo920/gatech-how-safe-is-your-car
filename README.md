@@ -4,7 +4,7 @@ This project analyses automobile accident fatality data and sheds light on the q
 1. [GoodCarBadCar](https://goodcarbadcar.net) for sales volume by M/M/MY
 
 The analytics is generally done in these steps:
-1. The fatalities data is used to scatter-plot fatality counts (y-axis) over accident years (x-axis) for either a specific M/M/MY, or an aggregation level of Make & Model (such as all models for a specific manufacturer).  
+1. The fatalities data is used to scatter-plot fatality counts (y-axis) over accident years (x-axis) for either a specific M/M/MY, or an aggregation level of Make & Model (such as all models for a specific manufacturer).  (The terms "make" and "manufacturer" are used interchangeably in this project.)  
 2. The corresponding sales volume (in millions) is then used to divide the above numbers.  This normalizes the data such that the fatality _numbers_ for different M/M/MY are converted into fatality _rates_ that can now be compared between M/M/MY's.
 3. Linear regression (LR) is applied to the normalized scatter plot.
 4. The first accident year of the LR is taken as the initial fatality rate for that M/M/MY.  This eliminates time-dependent factors such as mechanical breakdowns or driver behavioral changhes.
@@ -27,7 +27,7 @@ All setup steps are done at command line or in Terminal, unless otherwise stated
      2. List of vehicle models & IDs (by make) into `NHTSA-FARS-download/model-lookup/`
 ### GoodCarBadCar
 1. Go to [GoodCarBadCar](https://goodcarbadcar.net) and manually download sales data.
-2. Manually clean up the data. See history of `car_sales_ID_NoOther.csv`.
+2. Manually clean up the data. See history of [`car_sales_ID_NoOther.csv`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/commits/main/car_sales_ID_NoOther.csv).
 
 ## Data Pre-processing
 1. Execute `python b_offline_data_processing.py` which does the following:
@@ -43,14 +43,16 @@ From root directory of this project:
 4. Have fun!
 
 ## Ad-hoc analytics in Jupyter notebook
-The `.ipynb` files in the root directory are Jupyter notebooks that can be viewed directly on Github for run results:
-- `ex_makes.ipynb` - Non-normalized fatality rates of select manufactures across various model years.
-    - `ex_makes_details.ipynb` - A breakdown of the above, showing the linear regression done on each make & model year.
+The following `.ipynb` files in the root directory are Jupyter notebooks that can be viewed directly on Github for run results:
+- [`ex_makes.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/ex_makes.ipynb) - Non-normalized fatality rates of select **manufacturers** across various model years.
+    - [`ex_makes_details.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/ex_makes_details.ipynb) - A breakdown of the above, showing the linear regression done on each make & model year.
 
-The two notebooks below are the normalized versions of the two above:
-- `ex_makes_normalized.ipynb`
-    - `ex_makes_normalized_details.ipynb`
+The two notebooks below are the **normalized** versions of the two above:
+- [`ex_makes_normalized.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/ex_makes_normalized.ipynb)
+    - [`ex_makes_normalized_details.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/ex_makes_normalized_details.ipynb)
 
+- [`ex_models_normalized.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/ex_models_normalized.ipynb) - **Normalized** fatality rates of select **make & models** across various model years.
+    - [`ex_models_normalized_details.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/ex_models_normalized_details.ipynb) - A breakdown of the above, showing the linear regression done on each make & model year.
 
 
 Alternatively, following the steps below to tweak the notebooks parameters.
