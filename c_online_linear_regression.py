@@ -6,14 +6,6 @@ import matplotlib.pyplot as plt
 import platform 
 from b_offline_data_processing import aggregate
 
-##-----Set up Server-----##
-import flask as fl
-import flask_cors as fl_c
-app = fl.Flask(__name__)
-fl_c.CORS(app)
-year_input = 0
-make_input = ""
-model_input = ""
 
 def getData(verbose=False):
     # get master aggregate
@@ -105,7 +97,7 @@ def lookupSales(dfSales, Sales_Year=None, Make_ID=None, Model_ID=None, verbose=F
 
     return year, sales
 
-def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True):
+def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True, savePlot=False):
     k = name
 
     if filterCondition==None:
@@ -146,29 +138,31 @@ def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True)
     if  slope != None:   
         initFatality = slope * yearOne + intercept
             
-        fig,ax = plt.subplots()
-        ax.scatter(x_years,y_fatal)
-        ax.set_title(k)
+        if showPlot or savePlot:
+            fig,ax = plt.subplots()
+            ax.scatter(x_years,y_fatal)
+            ax.set_title(k)
+                
+            ax.plot(x_years, y_cal2, 'r') 
+            ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
+            ax.xaxis.set_label_text('accident year')
+            ax.yaxis.set_label_text('annual fatality' + permillion)
+
+            if showPlot:
+                plt.show()        
+                print(k)
+                print(f'Slope {slope} intercept {intercept}')
+                print(f'Initial fatality rate is {initFatality} per year')
             
-        ax.plot(x_years, y_cal2, 'r') 
-        ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
-        ax.xaxis.set_label_text('accident year')
-        ax.yaxis.set_label_text('annual fatality' + permillion)
+            if savePlot:
+                # FROM: 2012 Acura (All Models) (2012 sales of 156216 vehicles)
+                # TO  : 2012 Acura (All Models)
+                name = name[:name.rfind('(')-1]
 
-        if showPlot:
-            plt.show()        
-            print(k)
-            print(f'Slope {slope} intercept {intercept}')
-            print(f'Initial fatality rate is {initFatality} per year')
-        else:
-            # FROM: 2012 Acura (All Models) (2012 sales of 156216 vehicles)
-            # TO  : 2012 Acura (All Models)
-            name = name[:name.rfind('(')-1]
-
-            if platform.system() == "Windows":
-                plt.savefig("graphs\\" + name + ".png", bbox_inches="tight", dpi=70)
-            elif platform.system() == "Darwin" or platform.system() == "Linux":
-                plt.savefig("graphs/" + name + ".png", bbox_inches="tight", dpi=70)
+                if platform.system() == "Windows":
+                    plt.savefig("graphs\\" + name + ".png", bbox_inches="tight", dpi=70)
+                elif platform.system() == "Darwin" or platform.system() == "Linux":
+                    plt.savefig("graphs/" + name + ".png", bbox_inches="tight", dpi=70)
     
     return slope, intercept, initFatality
 
@@ -240,7 +234,7 @@ def summarize_by_makeyear( dfCrashAgg, modelYrStart, modelYrEnd, makes_dict, dfS
     ax.set_xlabel('Model Year')  # Add an x-label to the axes.
     ax.set_ylabel('Annual Fatalities' + permillion)  # Add a y-label to the axes.
     ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
-    ax.legend()
+    ax.legend(bbox_to_anchor=(1.04,1.04))
     plt.show()
 
 
@@ -305,84 +299,13 @@ def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, d
     ax.set_xlabel('Model Year')  # Add an x-label to the axes.
     ax.set_ylabel('Annual Fatalities' + permillion)  # Add a y-label to the axes.
     ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
-    ax.legend()
+    ax.legend(bbox_to_anchor=(1.04,1.04))
     plt.show()
 
-
-@app.route("/getValues")
-def getValues():
-    year_input = fl.request.values.get("year", None)
-    make_input = fl.request.values.get("make_ID", None)
-    make_name = fl.request.values.get("make_name", None)
-    model_input = fl.request.values.get("model_ID", None)
-    model_name = fl.request.values.get("model_name", None)
-    
-    year_val = year_input
-    make_val = make_input
-    model_val = model_input
-    year_name = year_input
-
-    if (year_input == "None"):
-        year_val = None;
-        year_name = "(All Years)";
-    if (make_input == "None"):
-        make_val = None;
-    if(model_input == "None"):
-        model_val = None;
-
-    regress_String = ""
-    ## Return value
-    response = {"fatality": -1};
-
-    dfMasterCrashAgg, dfSales = getData() ##get data
-
-    print("Values:", year_input, make_input, model_input, "being used");
-    usedYear, sales = lookupSales(dfSales, Sales_Year=year_val, Make_ID=make_val, Model_ID=model_val, verbose=False)
-    print("Successfully executed:", usedYear, sales);
-
-    group = ["MOD_YEAR", "Make_ID", "Model_ID", "ACC_YEAR"];
-    print("group:", group);
-    if(year_input == "None"):
-        group.remove("MOD_YEAR");
-    if(make_input == "None"):
-        group.remove("Make_ID");
-    if(model_input == "None"):
-        group.remove("Model_ID");
-
-    if (year_input == "None") or (make_input == "None") or (model_input == "None"):
-        dfMasterCrashAgg = reaggregate(dfMasterCrashAgg, groupBy=group);
-    
-    for i in range(0, len(group)):
-        if group[i] != "ACC_YEAR":
-            if group[i] == "MOD_YEAR":
-                regress_String = regress_String + group[i] + "=="
-                regress_String = regress_String + year_input + " "
-            if group[i] == "Make_ID":
-                regress_String = regress_String + group[i] + "=="
-                regress_String = regress_String + make_input + " "
-            if group[i] == "Model_ID":
-                regress_String = regress_String + group[i] + "=="
-                regress_String = regress_String + model_input + " "
-        if i < len(group)-1:    
-            regress_String = regress_String + "and "
-
-    regress_String = regress_String + "ACC_YEAR>=MOD_YEAR";
-    print(regress_String);
-    # _,_, fatality = linear_regress(dfMasterCrashAgg, year_name + " " + make_name + " " + model_name, regress_String, denom=sales, showPlot=False);
-
-    _,_, fatality = linear_regress(dfMasterCrashAgg
-        , f'{year_name} {make_name} {model_name} ({usedYear} sales of {sales} vehicles)'
-        , regress_String, denom=sales, showPlot=False);
-
-    response["fatality"] = np.ceil(fatality)
-    print("Normalized annual fatality rate of ", fatality);
-    return response
     
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=8888)
-
-'''    
+   
     dfMasterCrashAgg, dfSales = getData(verbose=True)
 
     # test lookupSales
@@ -427,7 +350,7 @@ if __name__ == '__main__':
     summarize_by_modelyear( dfMasterCrashAgg, modelYrStart, modelYrEnd, models_dict=x)
     # with normalization
     summarize_by_modelyear( dfMasterCrashAgg, modelYrStart, modelYrEnd, models_dict=x, dfSales=dfSales)
-'''
+
 
     
 
