@@ -41,6 +41,7 @@ From root directory of this project:
 2. Start analytics service by executing `python` [`c_online_linear_regression.py`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/c_online_linear_regression.py)
 3. Go to http://127.0.0.1:8887/visualization02.html in Chrome
 4. Have fun!
+<img width="768" alt="image" src="https://github.gatech.edu/storage/user/56739/files/ce8723b8-013d-459e-bd56-04480c78e421">
 
 ### Ad-hoc analytics
 The following `.ipynb` files in the root directory are Jupyter notebooks that can be viewed directly on Github for past run results.  Generally an `xxx.ipynb` gives a high level analysis, while `xxx_details.ipynb` gives a granular breakdown.
@@ -54,10 +55,11 @@ The two notebooks below are the **normalized** versions of the two above:
     - [`ex_makes_normalized_details.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/main/ex_makes_normalized_details.ipynb)
 
 **Normalized** fatality rates of select **make & models** across various model years:
-- [`ex_models_normalized.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/main/ex_models_normalized.ipynb)
+- [`ex_models_normalized.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/main/ex_models_normalized.ipynb) (image below)
     - [`ex_models_normalized_details.ipynb`](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/main/ex_models_normalized_details.ipynb) - A breakdown of the above, showing the linear regression done on each make & model year.
+<img width="887" alt="image" src="https://github.gatech.edu/storage/user/56739/files/b0df8a38-34c7-4621-8470-2ccbf868524b">
+
 
 ### Interactive ad-hoc analytics in Jupyter notebook
-[ex_playground.ipynb](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/ex_playground.ipynb) is an introductory notebook for getting familiar with running ad hoc analysis in this project.
-
-All `.ipynb` files above can also be opened in Jupyter notebook and editd with various parameters to run different analyses.
+- [ex_playground.ipynb](https://github.gatech.edu/bsoo3/CSE6242-Road-Safety-Officers/blob/readme/ex_playground.ipynb) is an introductory notebook for getting familiar with running ad hoc analysis in this project.
+- All `.ipynb` files above can also be opened in Jupyter notebook and editd with various parameters to run different analyses.
