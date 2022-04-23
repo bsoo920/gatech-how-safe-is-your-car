@@ -13,12 +13,56 @@ The analytics is generally done in these steps:
 Analyses 1-3 above are available via GUI driven by D3.  Analyses 1-5 are available via simple commands in Jupyter notebooks.
 
 # Installation
+#### Requirements:
+All setup steps are done at command line or in Terminal, unless otherwise stated.
+- Python 3.9 (or higher) 
+- Python libraries: numpy, pandas, matplotlib, flask
+- Chrome v92.0 (or higher)
 
+## Initial Data Setup
+### NHTSA FARS API
+1. Execute `python a_download_crash.py` - this downloads crash data into `NHTSA-FARS-download/`.
+2. Execute `python a_download_modelID_lookup.py` - this downloads:
+     1. List of vehicle makes & IDs into `NHTSA-FARS-download/`
+     2. List of vehicle models & IDs (by make) into `NHTSA-FARS-download/model-lookup/`
+### GoodCarBadCar
+1. Go to [GoodCarBadCar](https://goodcarbadcar.net) and manually download sales data.
+2. Manually clean up the data. See history of `car_sales_ID_NoOther.csv`.
 
+## Data Pre-processing
+1. Execute `python b_offline_data_processing.py` which does the following:
+    1. Reads and aggregates crash data to the M/M/MY level and saves pandas dataframe as a pickle `.pkl` file.
+    2. Reads the sales data and transposes it to database table format and saves as `.pkl` file.
 
 # Execution
+## Analytics GUI
+From root directory of this project:
+1. Start http server by executing `python -m http.server 8887`  (To end session, issue `Ctrl+C`)
+2. Start analytics service by executing `python c_online_linear_regression.py`
+3. Go to http://127.0.0.1:8887/visualization02.html in Chrome
+4. Have fun!
+
+## Ad-hoc analytics in Jupyter notebook
+The `.ipynb` files in the root directory are Jupyter notebooks that can be viewed directly on Github for run results:
+- `ex_makes.ipynb` - Non-normalized fatality rates of select manufactures across various model years.
+    - `ex_makes_details.ipynb` - A breakdown of the above, showing the linear regression done on each make & model year.
+
+The two notebooks below are the normalized versions of the two above:
+- `ex_makes_normalized.ipynb`
+    - `ex_makes_normalized_details.ipynb`
 
 
+
+Alternatively, following the steps below to tweak the notebooks parameters.
+
+### Requirements
+- Anaconda
+- Jupyter Notebook
+
+### Session Startup
+- Start Anaconda and Jupyter Notebook
+- For a quick start, try opening:
+    - `ex_makes.ipynb`
 
 
 # Table Visualization
