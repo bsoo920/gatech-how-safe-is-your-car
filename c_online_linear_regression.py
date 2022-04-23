@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import platform 
 from b_offline_data_processing import aggregate
 
 ##-----Set up Server-----##
@@ -160,7 +161,14 @@ def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True)
             print(f'Slope {slope} intercept {intercept}')
             print(f'Initial fatality rate is {initFatality} per year')
         else:
-            plt.savefig("graphs\\" + name + ".png", bbox_inches="tight", dpi=70)
+            # FROM: 2012 Acura (All Models) (2012 sales of 156216 vehicles)
+            # TO  : 2012 Acura (All Models)
+            name = name[:name.rfind('(')-1]
+
+            if platform.system() == "Windows":
+                plt.savefig("graphs\\" + name + ".png", bbox_inches="tight", dpi=70)
+            elif platform.system() == "Darwin" or platform.system() == "Linux":
+                plt.savefig("graphs/" + name + ".png", bbox_inches="tight", dpi=70)
     
     return slope, intercept, initFatality
 
@@ -316,7 +324,7 @@ def getValues():
 
     if (year_input == "None"):
         year_val = None;
-	yar_name = "(All Years)";
+        year_name = "(All Years)";
     if (make_input == "None"):
         make_val = None;
     if(model_input == "None"):
@@ -333,7 +341,7 @@ def getValues():
     print("Successfully executed:", usedYear, sales);
 
     group = ["MOD_YEAR", "Make_ID", "Model_ID", "ACC_YEAR"];
-
+    print("group:", group);
     if(year_input == "None"):
         group.remove("MOD_YEAR");
     if(make_input == "None"):
@@ -343,7 +351,7 @@ def getValues():
 
     if (year_input == "None") or (make_input == "None") or (model_input == "None"):
         dfMasterCrashAgg = reaggregate(dfMasterCrashAgg, groupBy=group);
-        
+    
     for i in range(0, len(group)):
         if group[i] != "ACC_YEAR":
             if group[i] == "MOD_YEAR":
@@ -355,18 +363,24 @@ def getValues():
             if group[i] == "Model_ID":
                 regress_String = regress_String + group[i] + "=="
                 regress_String = regress_String + model_input + " "
-        if i < len(group)-2:    
+        if i < len(group)-1:    
             regress_String = regress_String + "and "
-                
+
+    regress_String = regress_String + "ACC_YEAR>=MOD_YEAR";
     print(regress_String);
-    _,_, fatality = linear_regress(dfMasterCrashAgg, year_name + " " + make_name + " " + model_name, regress_String, denom=sales, showPlot=False);
+    # _,_, fatality = linear_regress(dfMasterCrashAgg, year_name + " " + make_name + " " + model_name, regress_String, denom=sales, showPlot=False);
+
+    _,_, fatality = linear_regress(dfMasterCrashAgg
+        , f'{year_name} {make_name} {model_name} ({usedYear} sales of {sales} vehicles)'
+        , regress_String, denom=sales, showPlot=False);
+
     response["fatality"] = np.ceil(fatality)
     print("Normalized annual fatality rate of ", fatality);
     return response
     
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="127.0.0.1", port=8888)
 
 '''    
     dfMasterCrashAgg, dfSales = getData(verbose=True)

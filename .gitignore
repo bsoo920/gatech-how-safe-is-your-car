@@ -1,4 +1,3 @@
-
 .DS_Store
 NHTSA.csv
 .idea/
@@ -6,3 +5,4 @@ NHTSA-FARS-download/*.zip
 *dropme*
 *-checkpoint.ipynb
 __pycache__/*
+graphs/
