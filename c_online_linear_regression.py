@@ -3,7 +3,9 @@ import numpy as np
 import pandas as pd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import platform 
 from b_offline_data_processing import aggregate
+
 
 def getData(verbose=False):
     # get master aggregate
@@ -15,10 +17,9 @@ def getData(verbose=False):
     if verbose:
 	    print(dfMasterCrashAgg[:5])
 	    print(dfSales[:5])
-
-    return dfMasterCrashAgg, dfSales
-
-
+    
+    return dfMasterCrashAgg, dfSales    
+    
 def reaggregate( dfCrashAgg, groupBy=None):
     # If groupBy==None, then no further aggregation is done, i.e. use agg level of dfCrashAgg.
     # Otherwise groupBy should be list of columns, e.g. ['MOD_YEAR', 'Make_ID', 'ACC_YEAR']
@@ -96,7 +97,7 @@ def lookupSales(dfSales, Sales_Year=None, Make_ID=None, Model_ID=None, verbose=F
 
     return year, sales
 
-def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True):
+def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True, savePlot=False):
     k = name
 
     if filterCondition==None:
@@ -136,22 +137,32 @@ def linear_regress(dfCrashAgg, name, filterCondition, denom=None, showPlot=True)
     # print linear regression on top of scatter plot (if slope != None)
     if  slope != None:   
         initFatality = slope * yearOne + intercept
-        
-        if showPlot:
             
+        if showPlot or savePlot:
             fig,ax = plt.subplots()
             ax.scatter(x_years,y_fatal)
             ax.set_title(k)
-            
+                
             ax.plot(x_years, y_cal2, 'r') 
             ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
             ax.xaxis.set_label_text('accident year')
             ax.yaxis.set_label_text('annual fatality' + permillion)
 
-            plt.show()        
-            print(k)
-            print(f'Slope {slope} intercept {intercept}')
-            print(f'Initial fatality rate is {initFatality} per year')
+            if showPlot:
+                plt.show()        
+                print(k)
+                print(f'Slope {slope} intercept {intercept}')
+                print(f'Initial fatality rate is {initFatality} per year')
+            
+            if savePlot:
+                # FROM: 2012 Acura (All Models) (2012 sales of 156216 vehicles)
+                # TO  : 2012 Acura (All Models)
+                name = name[:name.rfind('(')-1]
+
+                if platform.system() == "Windows":
+                    plt.savefig("graphs\\" + name + ".png", bbox_inches="tight", dpi=70)
+                elif platform.system() == "Darwin" or platform.system() == "Linux":
+                    plt.savefig("graphs/" + name + ".png", bbox_inches="tight", dpi=70)
     
     return slope, intercept, initFatality
 
@@ -288,12 +299,13 @@ def summarize_by_modelyear( dfCrashAgg, modelYrStart, modelYrEnd, models_dict, d
     ax.set_xlabel('Model Year')  # Add an x-label to the axes.
     ax.set_ylabel('Annual Fatalities' + permillion)  # Add a y-label to the axes.
     ax.xaxis.set_major_formatter(mpl.ticker.StrMethodFormatter('{x:4.0f}'))
-    ax.legend()
+    ax.legend(bbox_to_anchor=(1.04,1.04))
     plt.show()
+
     
 
 if __name__ == '__main__':
-    
+   
     dfMasterCrashAgg, dfSales = getData(verbose=True)
 
     # test lookupSales
