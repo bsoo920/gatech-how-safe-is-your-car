@@ -34,10 +34,10 @@ $ pip install -U flask-cors
 ## Setting up the web server
 1. Run a web server with the following command:
 ```bash
-python -m -m http.server 8887 &
+python -m http.server 8887 &
 ```
 
-2. Then from the "Project" directory (it should be the parent directory of this file)
+2. On a separate command prompt window, from the "Project" directory (it should be the parent directory of this file)
 ```bash
 python c_online_linear_regression.py
 ```
