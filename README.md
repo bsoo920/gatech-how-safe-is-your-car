@@ -1,3 +1,8 @@
+# Video Intro
+Click for a 3-minute intro video:
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/a0d3QQtqGzE/1.jpg)](https://www.youtube.com/watch?v=a0d3QQtqGzE)
+
 # Description
 This project analyses automobile accident fatality data and sheds light on the question "Given a specific make/model/model-year (M/M/MY), what is the number of fatalities per year per million vehicles?"  It pulls data from two sources:
 1. [NHTSA FARS API](https://crashviewer.nhtsa.dot.gov/CrashAPI) for fatalities data
