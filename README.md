@@ -18,12 +18,13 @@ The analytics is generally done in these steps:
 
 Analyses 1-3 above are available via GUI driven by D3.  Analyses 1-5 are available via simple commands in Jupyter notebooks.
 
-# Installation
-#### Requirements:
-All setup steps are done at command line or in Terminal, unless otherwise stated.
+# Requirements
 - Python 3.9 (or higher) 
 - Python libraries: numpy, pandas, matplotlib, flask, flask_cors
 - Chrome v92.0 (or higher)
+
+# Installation
+Installation is not necessary if this repo is cloned.  The steps in this section merely describe how data was originally downloaded and processed.
 
 ### Initial Data Setup
 #### NHTSA FARS API
