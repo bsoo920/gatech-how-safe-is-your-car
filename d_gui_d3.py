@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 from c_online_linear_regression import *
 
 ##-----Set up Server-----##
