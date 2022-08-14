@@ -22,7 +22,7 @@ Analyses 1-3 above are available via GUI driven by D3.  Analyses 1-5 are availab
 #### Requirements:
 All setup steps are done at command line or in Terminal, unless otherwise stated.
 - Python 3.9 (or higher) 
-- Python libraries: numpy, pandas, matplotlib, flask
+- Python libraries: numpy, pandas, matplotlib, flask, flask_cors
 - Chrome v92.0 (or higher)
 
 ### Initial Data Setup
