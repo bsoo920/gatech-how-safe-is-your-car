@@ -1,5 +1,5 @@
 # Intro
-_"**How safe is your car**, especially when compared to other similar vehicles?"_ is the question that I wanted to answer by leading a team of 4 for a [Data & Visual Analytics graduate class](https://omscs.gatech.edu/cse-6242-data-visual-analytics) project at GeorgiaTech.  I conceived and architected the project, and wrote the majority of the python code (see [commits](https://github.com/bsoo920/gatech-how-safe-is-your-car/commits/main)).
+_"**How safe is your car**, especially when compared to other similar vehicles?"_ is the question that I wanted to answer by leading a team of 4 for a [Data & Visual Analytics graduate class](https://omscs.gatech.edu/cse-6242-data-visual-analytics) project at GeorgiaTech.  I conceived and architected the project, and wrote the majority of the python code (except for `d_gui_d3.py`) (see [commits](https://github.com/bsoo920/gatech-how-safe-is-your-car/commits/main)).
 
 # 3-minute intro video
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/a0d3QQtqGzE/1.jpg)](https://www.youtube.com/watch?v=a0d3QQtqGzE)
