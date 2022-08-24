@@ -39,7 +39,7 @@ def aggregate(dfCrash, filterCondition='MOD_YEAR>=1999', groupBy=['MOD_YEAR', 'M
 def readSales( verbose=False, nrows = None):
     dir = 'car_sales_data/'
 
-    df_original = pd.read_csv(f'{dir}car_sales_ID_NoOther.csv', encoding='latin1', header=0, nrows=nrows)
+    df_original = pd.read_csv(f'car_sales_ID_NoOther.csv', encoding='latin1', header=0, nrows=nrows)
 
     df_melted = pd.melt(df_original
                         , id_vars = ['Make_Name', 'Model_Name','Model_ID','Make_ID']
